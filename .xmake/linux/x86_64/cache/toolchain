@@ -1,0 +1,82 @@
+{
+    tool_target_bench_linux_x86_64_cxx = {
+        toolname = "gcc",
+        program = "/usr/bin/gcc",
+        toolchain_info = {
+            name = "gcc",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            plat = "linux",
+            arch = "x86_64"
+        }
+    },
+    tool_target_bench_linux_x86_64_ld = {
+        toolname = "gxx",
+        program = "/usr/bin/g++",
+        toolchain_info = {
+            name = "gcc",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            plat = "linux",
+            arch = "x86_64"
+        }
+    },
+    tool_target_test_linux_x86_64_ld = {
+        toolname = "gxx",
+        program = "/usr/bin/g++",
+        toolchain_info = {
+            name = "gcc",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            plat = "linux",
+            arch = "x86_64"
+        }
+    },
+    tool_target_libciphervault_linux_x86_64_ar = {
+        toolname = "ar",
+        program = "/usr/bin/ar",
+        toolchain_info = {
+            name = "gcc",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            plat = "linux",
+            arch = "x86_64"
+        }
+    },
+    tool_target_libciphervault_linux_x86_64_cxx = {
+        toolname = "gcc",
+        program = "/usr/bin/gcc",
+        toolchain_info = {
+            name = "gcc",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            plat = "linux",
+            arch = "x86_64"
+        }
+    },
+    tool_target_test_linux_x86_64_cxx = {
+        toolname = "gcc",
+        program = "/usr/bin/gcc",
+        toolchain_info = {
+            name = "gcc",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            plat = "linux",
+            arch = "x86_64"
+        }
+    },
+    tool_target_ciphervault_linux_x86_64_cxx = {
+        toolname = "gcc",
+        program = "/usr/bin/gcc",
+        toolchain_info = {
+            name = "gcc",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            plat = "linux",
+            arch = "x86_64"
+        }
+    },
+    tool_target_ciphervault_linux_x86_64_ld = {
+        toolname = "gxx",
+        program = "/usr/bin/g++",
+        toolchain_info = {
+            name = "gcc",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            plat = "linux",
+            arch = "x86_64"
+        }
+    }
+}
