@@ -1,5 +1,5 @@
 #include <benchmark/benchmark.h>
-#include <libciphervault/cipher.hpp>
+#include <libciphervault/cert.hpp>
 #include <iostream>
 
 #define INITIAL_SIZE 200

@@ -1,8 +1,23 @@
 [
 {
   "directory": "/mnt/files/projects/bry/ciphervault",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Wall", "-Werror", "-O3", "-std=c++2a", "-Iinclude", "-I/usr/local/include", "-I/usr/include", "-I", "/home/pablo/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/pablo/.xmake/packages/c/cxxopts/v3.0.0/1eea793b9f4b4ec0827a4c67495d00a5/include", "-DNDEBUG", "-o", "build/.objs/libciphervault/linux/x86_64/release/src/libciphervault/cipher.cpp.o", "src/libciphervault/cipher.cpp"],
-  "file": "src/libciphervault/cipher.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Wall", "-Werror", "-O3", "-std=c++2a", "-Iinclude", "-I/usr/local/include", "-I/usr/include", "-I", "/home/pablo/.xmake/packages/g/gtest/1.12.1/77b9096bc4b34d9282f672d36b015ba9/include", "-DNDEBUG", "-o", "build/.objs/test/linux/x86_64/release/test/cert/cert_tests.cpp.o", "test/cert/cert_tests.cpp"],
+  "file": "test/cert/cert_tests.cpp"
+},
+{
+  "directory": "/mnt/files/projects/bry/ciphervault",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Wall", "-Werror", "-O3", "-std=c++2a", "-Iinclude", "-I/usr/local/include", "-I/usr/include", "-I", "/home/pablo/.xmake/packages/g/gtest/1.12.1/77b9096bc4b34d9282f672d36b015ba9/include", "-DNDEBUG", "-o", "build/.objs/test/linux/x86_64/release/test/main.cpp.o", "test/main.cpp"],
+  "file": "test/main.cpp"
+},
+{
+  "directory": "/mnt/files/projects/bry/ciphervault",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Wall", "-Werror", "-O3", "-std=c++2a", "-Iinclude", "-I/usr/local/include", "-I/usr/include", "-I", "/home/pablo/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/pablo/.xmake/packages/c/cxxopts/v3.0.0/1eea793b9f4b4ec0827a4c67495d00a5/include", "-I", "/home/pablo/.xmake/packages/o/openssl3/3.0.7/8aaa08615b8740ada8faf167c0cbf065/include", "-DNDEBUG", "-o", "build/.objs/libciphervault/linux/x86_64/release/src/libciphervault/cert.cpp.o", "src/libciphervault/cert.cpp"],
+  "file": "src/libciphervault/cert.cpp"
+},
+{
+  "directory": "/mnt/files/projects/bry/ciphervault",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Wall", "-Werror", "-O3", "-std=c++2a", "-Iinclude", "-I/usr/local/include", "-I/usr/include", "-I", "/home/pablo/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/pablo/.xmake/packages/c/cxxopts/v3.0.0/1eea793b9f4b4ec0827a4c67495d00a5/include", "-I", "/home/pablo/.xmake/packages/o/openssl3/3.0.7/8aaa08615b8740ada8faf167c0cbf065/include", "-DNDEBUG", "-o", "build/.objs/ciphervault/linux/x86_64/release/src/main.cpp.o", "src/main.cpp"],
+  "file": "src/main.cpp"
 },
 {
   "directory": "/mnt/files/projects/bry/ciphervault",
@@ -13,19 +28,4 @@
   "directory": "/mnt/files/projects/bry/ciphervault",
   "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Wall", "-Werror", "-O3", "-std=c++2a", "-Iinclude", "-I/usr/local/include", "-I/usr/include", "-I", "/home/pablo/.xmake/packages/b/benchmark/1.7.0/f560adeb922d4838b5ce55f080617dbb/include", "-DNDEBUG", "-o", "build/.objs/bench/linux/x86_64/release/bench/main.cpp.o", "bench/main.cpp"],
   "file": "bench/main.cpp"
-},
-{
-  "directory": "/mnt/files/projects/bry/ciphervault",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Wall", "-Werror", "-O3", "-std=c++2a", "-Iinclude", "-I/usr/local/include", "-I/usr/include", "-I", "/home/pablo/.xmake/packages/g/gtest/1.12.1/77b9096bc4b34d9282f672d36b015ba9/include", "-DNDEBUG", "-o", "build/.objs/test/linux/x86_64/release/test/cipher/cipher_tests.cpp.o", "test/cipher/cipher_tests.cpp"],
-  "file": "test/cipher/cipher_tests.cpp"
-},
-{
-  "directory": "/mnt/files/projects/bry/ciphervault",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Wall", "-Werror", "-O3", "-std=c++2a", "-Iinclude", "-I/usr/local/include", "-I/usr/include", "-I", "/home/pablo/.xmake/packages/g/gtest/1.12.1/77b9096bc4b34d9282f672d36b015ba9/include", "-DNDEBUG", "-o", "build/.objs/test/linux/x86_64/release/test/main.cpp.o", "test/main.cpp"],
-  "file": "test/main.cpp"
-},
-{
-  "directory": "/mnt/files/projects/bry/ciphervault",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Wall", "-Werror", "-O3", "-std=c++2a", "-Iinclude", "-I/usr/local/include", "-I/usr/include", "-I", "/home/pablo/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include", "-I", "/home/pablo/.xmake/packages/c/cxxopts/v3.0.0/1eea793b9f4b4ec0827a4c67495d00a5/include", "-DNDEBUG", "-o", "build/.objs/ciphervault/linux/x86_64/release/src/main.cpp.o", "src/main.cpp"],
-  "file": "src/main.cpp"
 }]

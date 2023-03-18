@@ -1,15 +1,15 @@
-set_languages("c++2a")
+set_languages("c++23")
 add_rules("mode.debug", "mode.release")
 
 set_warnings("all", "error")
 
 set_optimize("fastest")
--- add_cxflags("-stdnolib", "-fno-strict-aliasing")
+-- add_cxflags("-stdnolib", "-fno-strict-aliasing", { force = true })
 
 add_includedirs("include", "/usr/local/include", "/usr/include")
 
 -- add libraries
-local project_libs = { "fmt", "cxxopts" }
+local project_libs = { "fmt", "cxxopts", "openssl3" }
 local test_libs = { "gtest" }
 local bench_libs = { "benchmark" }
 
