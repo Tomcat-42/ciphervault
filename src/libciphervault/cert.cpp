@@ -5,8 +5,6 @@
 #include <openssl/pem.h>
 #include <openssl/x509.h>
 
-#include <ctime>
-#include <iostream>
 #include <libciphervault/cert.hpp>
 #include <memory>
 #include <string>
@@ -23,10 +21,11 @@ namespace ciphervault {
     return str;
   };
 
-  cert::cert(const std::string &cert_path) {
+  cert::cert(const std::vector<char> &cert) {
     this->setup();
 
-    ciphervault::bio cert_bio(BIO_new_file(cert_path.c_str(), "rb"), BIO_free);
+    ciphervault::bio cert_bio(BIO_new_mem_buf(cert.data(), cert.size()),
+                              BIO_free);
     if (!(cert_bio.get())) {
       ERR_print_errors_fp(stderr);
       throw std::runtime_error("unable to open cert file");

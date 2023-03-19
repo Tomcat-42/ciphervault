@@ -5,6 +5,7 @@
 #include <openssl/ssl.h>
 #include <openssl/x509.h>
 #include <string>
+#include <vector>
 
 namespace ciphervault {
   std::string test();
@@ -16,6 +17,9 @@ namespace ciphervault {
 
   /**
    * @brief A class to represent a x509 DER certificate
+   *
+   * This class is a wrapper around the OpenSSL x509 structure. It provides
+   * methods to get the details of the certificate.
    * */
   class cert {
   private:
@@ -23,7 +27,15 @@ namespace ciphervault {
      * @brief The in-memory representation of the certificate
      * */
     ciphervault::x509 certificate = {nullptr, nullptr};
+
+    /**
+     * @brief Initialize the OpenSSL library
+     * */
     void setup();
+
+    /**
+     * @brief Cleanup the OpenSSL library
+     * */
     void cleanup();
 
   public:
@@ -34,10 +46,10 @@ namespace ciphervault {
     cert &operator=(cert &&) = delete;
 
     /**
-     * @brief Construct a new cert object from a string
-     * @param cert The string to construct the certificate from
+     * @brief Construct a new cert object from a vector of chars
+     * @param cert The certificate in DER format as a vector of chars
      * */
-    explicit cert(std::string const &cert_content);
+    explicit cert(const std::vector<char> &cert);
 
     ~cert();
 

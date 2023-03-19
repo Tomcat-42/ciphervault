@@ -23,7 +23,17 @@ int main(int argc, const char **argv) {
   }
 
   const char *filename = argv[1];
-  ciphervault::cert cert(filename);
+
+  // Read the certificate to a std::vector<std::byte>
+  std::ifstream file(filename, std::ios::binary);
+  if (!file.is_open()) {
+    fmt::print("Failed to open file: {}\n", filename);
+    return 1;
+  }
+  std::vector<char> cert_data((std::istreambuf_iterator<char>(file)),
+                              std::istreambuf_iterator<char>());
+
+  ciphervault::cert cert(cert_data);
 
   std::cout << cert.get_contents() << std::endl;
   std::cout << cert.get_subject() << std::endl;
