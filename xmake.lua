@@ -1,10 +1,10 @@
-set_languages("c++23")
+set_languages("c++2b")
 add_rules("mode.debug", "mode.release")
 
 set_warnings("all", "error")
 
 set_optimize("fastest")
--- add_cxflags("-stdnolib", "-fno-strict-aliasing", { force = true })
+add_cxflags("-std=c++2b", { force = true })
 
 add_includedirs("include", "/usr/local/include", "/usr/include")
 
