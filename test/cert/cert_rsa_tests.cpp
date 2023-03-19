@@ -1,6 +1,3 @@
-#include <fmt/color.h>
-#include <fmt/format.h>
-#include <fstream>
 #include <gtest/gtest.h>
 #include <libciphervault/cert.hpp>
 
