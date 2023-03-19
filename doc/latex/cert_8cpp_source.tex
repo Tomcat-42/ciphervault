@@ -1,0 +1,159 @@
+\hypertarget{cert_8cpp_source}{}\doxysection{cert.\+cpp}
+\label{cert_8cpp_source}\index{src/libciphervault/cert.cpp@{src/libciphervault/cert.cpp}}
+\mbox{\hyperlink{cert_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <openssl/asn1.h>}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <openssl/bio.h>}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <openssl/conf.h>}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <openssl/err.h>}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <openssl/pem.h>}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <openssl/x509.h>}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{cert_8hpp}{libciphervault/cert.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00012}00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceciphervault}{ciphervault}}\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00013}\mbox{\hyperlink{namespaceciphervault_a6d01d5a0f979cd84fa3374d6a358022d}{00013}}\ \ \ std::string\ \mbox{\hyperlink{namespaceciphervault_a6d01d5a0f979cd84fa3374d6a358022d}{test}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}test"{}};\ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00015}00015\ \ \ \textcolor{comment}{//\ constexpr\ size\_t\ SECONDS\_IN\_DAY\ =\ 24\ *\ 60\ *\ 60;}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00017}\mbox{\hyperlink{namespaceciphervault_ac318f8212a52388e4cbd16ebee91573a}{00017}}\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{namespaceciphervault_ac318f8212a52388e4cbd16ebee91573a}{bio\_to\_string}}\ =\ [](\mbox{\hyperlink{namespaceciphervault_a1ac102035d88e787b5fa1cbe32860cad}{bio}}\ \&\mbox{\hyperlink{namespaceciphervault_a1ac102035d88e787b5fa1cbe32860cad}{bio}},\ \textcolor{keywordtype}{int}\ size)\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00018}00018\ \ \ \ \ std::string\ str;}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00019}00019\ \ \ \ \ str.resize(size);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ bytes\_read\ =\ BIO\_read(\mbox{\hyperlink{namespaceciphervault_a1ac102035d88e787b5fa1cbe32860cad}{bio}}.get(),\ str.data(),\ size);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (bytes\_read\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00022}00022\ \ \ \ \ \ \ ERR\_print\_errors\_fp(stderr);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00023}00023\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Unable\ to\ read\ from\ BIO"{}});}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00025}00025\ \ \ \ \ str.resize(bytes\_read);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00027}00027\ \ \ \};}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00029}\mbox{\hyperlink{classciphervault_1_1cert_ad8fe0710c50b359fc5581acf89448eb8}{00029}}\ \ \ \mbox{\hyperlink{classciphervault_1_1cert_a243cb81b6e158e169f1c8eae17481808}{cert::cert}}(\textcolor{keyword}{const}\ std::vector<unsigned\ char>\ \&\mbox{\hyperlink{classciphervault_1_1cert}{cert}})\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00030}00030\ \ \ \ \ this-\/>\mbox{\hyperlink{classciphervault_1_1cert_a0bf28aeb1f37cb7703e18f5698bdacd5}{setup}}();}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{namespaceciphervault_a1ac102035d88e787b5fa1cbe32860cad}{ciphervault::bio}}\ cert\_bio(BIO\_new\_mem\_buf(\mbox{\hyperlink{classciphervault_1_1cert}{cert}}.data(),\ \mbox{\hyperlink{classciphervault_1_1cert}{cert}}.size()),}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BIO\_free);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(cert\_bio.get()))\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00035}00035\ \ \ \ \ \ \ ERR\_print\_errors\_fp(stderr);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}unable\ to\ open\ cert\ file"{}});}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ create\ x509\ object\ and\ read\ cert\ into\ it}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{namespaceciphervault_ad0e46e953a50dfcfb78ff655fc9ef445}{ciphervault::x509}}\ \mbox{\hyperlink{classciphervault_1_1cert_a6c6305f3a0022d1b5574f1c423da3b1e}{certificate}}(X509\_new(),\ X509\_free);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classciphervault_1_1cert_a6c6305f3a0022d1b5574f1c423da3b1e}{certificate}})\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00042}00042\ \ \ \ \ \ \ ERR\_print\_errors\_fp(stderr);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Unable\ to\ create\ X509\ object"{}});}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//\ init\ certificate}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00046}00046\ \ \ \ \ this-\/>certificate\ =\ std::move(\mbox{\hyperlink{classciphervault_1_1cert_a6c6305f3a0022d1b5574f1c423da3b1e}{certificate}});}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//\ read\ cert\ into\ x509\ object}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{auto}\ a\ =\ this-\/>certificate.get();}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (d2i\_X509\_bio(cert\_bio.get(),\ \&a)\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00051}00051\ \ \ \ \ \ \ ERR\_print\_errors\_fp(stderr);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00052}00052\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Unable\ to\ read\ certificate\ from\ file"{}});}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00054}00054\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00056}\mbox{\hyperlink{classciphervault_1_1cert_a433957885f7d3ad91208f846d9827d16}{00056}}\ \ \ std::string\ \mbox{\hyperlink{classciphervault_1_1cert_a433957885f7d3ad91208f846d9827d16}{cert::get\_issuer}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{namespaceciphervault_a1ac102035d88e787b5fa1cbe32860cad}{ciphervault::bio}}\ output(BIO\_new(BIO\_s\_mem()),\ BIO\_free);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00058}00058\ \ \ \ \ X509\_NAME\ *issuer\ =\ X509\_get\_issuer\_name(this-\/>\mbox{\hyperlink{classciphervault_1_1cert_a6c6305f3a0022d1b5574f1c423da3b1e}{certificate}}.get());}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (issuer\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00061}00061\ \ \ \ \ \ \ ERR\_print\_errors\_fp(stderr);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00062}00062\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Unable\ to\ extract\ issuer\ from\ certificate"{}});}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00065}00065\ \ \ \ \ X509\_NAME\_print\_ex(output.get(),\ issuer,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00066}00066\ \ \ \ \ std::string\ cert\_issuer\ =\ \mbox{\hyperlink{namespaceciphervault_ac318f8212a52388e4cbd16ebee91573a}{bio\_to\_string}}(output,\ 32768);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{return}\ cert\_issuer;}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00068}00068\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00070}\mbox{\hyperlink{classciphervault_1_1cert_a2836199df37763d05cbeed8a7aa0ca19}{00070}}\ \ \ std::string\ \mbox{\hyperlink{classciphervault_1_1cert_a2836199df37763d05cbeed8a7aa0ca19}{cert::get\_contents}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{namespaceciphervault_a1ac102035d88e787b5fa1cbe32860cad}{ciphervault::bio}}\ output(BIO\_new(BIO\_s\_mem()),\ BIO\_free);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00072}00072\ \ \ \ \ X509\_print\_ex(output.get(),\ this-\/>certificate.get(),\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00073}00073\ \ \ \ \ std::string\ cert\_details\ =\ \mbox{\hyperlink{namespaceciphervault_ac318f8212a52388e4cbd16ebee91573a}{bio\_to\_string}}(output,\ 32768);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ cert\_details;}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00075}00075\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00077}\mbox{\hyperlink{classciphervault_1_1cert_af92ce517a90f751eaaf240b112a4ab2e}{00077}}\ \ \ std::string\ \mbox{\hyperlink{classciphervault_1_1cert_af92ce517a90f751eaaf240b112a4ab2e}{cert::get\_subject}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00078}00078\ \ \ \ \ X509\_NAME\ *subject\ =\ X509\_get\_subject\_name(this-\/>\mbox{\hyperlink{classciphervault_1_1cert_a6c6305f3a0022d1b5574f1c423da3b1e}{certificate}}.get());}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{if}\ (subject\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00081}00081\ \ \ \ \ \ \ ERR\_print\_errors\_fp(stderr);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00082}00082\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Unable\ to\ extract\ subject\ from\ certificate"{}});}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{namespaceciphervault_a1ac102035d88e787b5fa1cbe32860cad}{ciphervault::bio}}\ output(BIO\_new(BIO\_s\_mem()),\ BIO\_free);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00086}00086\ \ \ \ \ X509\_NAME\_print\_ex(output.get(),\ subject,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00087}00087\ \ \ \ \ std::string\ cert\_subject\ =\ \mbox{\hyperlink{namespaceciphervault_ac318f8212a52388e4cbd16ebee91573a}{bio\_to\_string}}(output,\ 4096);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{return}\ cert\_subject;}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00089}00089\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00091}\mbox{\hyperlink{classciphervault_1_1cert_a25d870596f317a161b6507564d34866f}{00091}}\ \ \ std::string\ \mbox{\hyperlink{classciphervault_1_1cert_a25d870596f317a161b6507564d34866f}{cert::get\_not\_before}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{comment}{//\ extract\ validity\ period}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00093}00093\ \ \ \ \ ASN1\_TIME\ *not\_before\ =\ X509\_get\_notBefore(this-\/>\mbox{\hyperlink{classciphervault_1_1cert_a6c6305f3a0022d1b5574f1c423da3b1e}{certificate}}.get());}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{if}\ (not\_before\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00095}00095\ \ \ \ \ \ \ ERR\_print\_errors\_fp(stderr);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00096}00096\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Unable\ to\ extract\ notBefore\ from\ certificate"{}});}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00099}00099\ \ \ \ \ \mbox{\hyperlink{namespaceciphervault_a1ac102035d88e787b5fa1cbe32860cad}{ciphervault::bio}}\ output(BIO\_new(BIO\_s\_mem()),\ BIO\_free);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00100}00100\ \ \ \ \ ASN1\_TIME\_print(output.get(),\ not\_before);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00102}00102\ \ \ \ \ std::string\ not\_before\_str\ =\ \mbox{\hyperlink{namespaceciphervault_ac318f8212a52388e4cbd16ebee91573a}{bio\_to\_string}}(output,\ 4096);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{return}\ not\_before\_str;}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00105}00105\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00107}\mbox{\hyperlink{classciphervault_1_1cert_a0241c84bb4ba3f3d2d1e522d5af46f50}{00107}}\ \ \ std::string\ \mbox{\hyperlink{classciphervault_1_1cert_a0241c84bb4ba3f3d2d1e522d5af46f50}{cert::get\_not\_after}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{comment}{//\ extract\ validity\ period}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00109}00109\ \ \ \ \ ASN1\_TIME\ *not\_after\ =\ X509\_get\_notAfter(this-\/>\mbox{\hyperlink{classciphervault_1_1cert_a6c6305f3a0022d1b5574f1c423da3b1e}{certificate}}.get());}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (not\_after\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00111}00111\ \ \ \ \ \ \ ERR\_print\_errors\_fp(stderr);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00112}00112\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Unable\ to\ extract\ notAfter\ from\ certificate"{}});}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00113}00113\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00115}00115\ \ \ \ \ \mbox{\hyperlink{namespaceciphervault_a1ac102035d88e787b5fa1cbe32860cad}{ciphervault::bio}}\ output(BIO\_new(BIO\_s\_mem()),\ BIO\_free);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00116}00116\ \ \ \ \ ASN1\_TIME\_print(output.get(),\ not\_after);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00118}00118\ \ \ \ \ std::string\ not\_after\_str\ =\ \mbox{\hyperlink{namespaceciphervault_ac318f8212a52388e4cbd16ebee91573a}{bio\_to\_string}}(output,\ 4096);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{return}\ not\_after\_str;}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00121}00121\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00123}\mbox{\hyperlink{classciphervault_1_1cert_ad55ba14d78103da5acc54c12fd51e46d}{00123}}\ \ \ std::string\ \mbox{\hyperlink{classciphervault_1_1cert_ad55ba14d78103da5acc54c12fd51e46d}{cert::get\_signature\_algorithm}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{comment}{//\ extract\ signature\ algorithm}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keyword}{const}\ X509\_ALGOR\ *signature\_algorithm\ =}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ X509\_get0\_tbs\_sigalg(this-\/>\mbox{\hyperlink{classciphervault_1_1cert_a6c6305f3a0022d1b5574f1c423da3b1e}{certificate}}.get());}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{if}\ (signature\_algorithm\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00128}00128\ \ \ \ \ \ \ ERR\_print\_errors\_fp(stderr);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00129}00129\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Unable\ to\ extract\ signature\ algorithm\ from\ certificate"{}});}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00132}00132\ \ \ \ \ \mbox{\hyperlink{namespaceciphervault_a1ac102035d88e787b5fa1cbe32860cad}{ciphervault::bio}}\ output(BIO\_new(BIO\_s\_mem()),\ BIO\_free);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00133}00133\ \ \ \ \ std::string\ signature\_algorithm\_str\ =\ \mbox{\hyperlink{namespaceciphervault_ac318f8212a52388e4cbd16ebee91573a}{bio\_to\_string}}(output,\ 4096);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{return}\ signature\_algorithm\_str;}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00135}00135\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00137}\mbox{\hyperlink{classciphervault_1_1cert_a6d0400c242a5fae3028d468f01cdcc3f}{00137}}\ \ \ \mbox{\hyperlink{classciphervault_1_1cert_a6d0400c242a5fae3028d468f01cdcc3f}{cert::\string~cert}}()\ \{\ this-\/>\mbox{\hyperlink{classciphervault_1_1cert_a7e99f4300e3780235690e2cac9daecbe}{cleanup}}();\ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00139}\mbox{\hyperlink{classciphervault_1_1cert_a0bf28aeb1f37cb7703e18f5698bdacd5}{00139}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classciphervault_1_1cert_a0bf28aeb1f37cb7703e18f5698bdacd5}{cert::setup}}()\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00140}00140\ \ \ \ \ OpenSSL\_add\_all\_algorithms();}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00141}00141\ \ \ \ \ ERR\_load\_crypto\_strings();}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00142}00142\ \ \ \ \ ERR\_clear\_error();}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00143}00143\ \ \ \ \ OPENSSL\_no\_config();}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00144}00144\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00146}\mbox{\hyperlink{classciphervault_1_1cert_a7e99f4300e3780235690e2cac9daecbe}{00146}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classciphervault_1_1cert_a7e99f4300e3780235690e2cac9daecbe}{cert::cleanup}}()\ \{}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00147}00147\ \ \ \ \ CONF\_modules\_unload(1);}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00148}00148\ \ \ \ \ CONF\_modules\_free();}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00149}00149\ \ \ \ \ ERR\_free\_strings();}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00150}00150\ \ \ \ \ EVP\_cleanup();}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00151}00151\ \ \ \ \ CRYPTO\_cleanup\_all\_ex\_data();}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00152}00152\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cert_8cpp_source_l00153}00153\ \}\ \textcolor{comment}{//\ namespace\ ciphervault}}
+
+\end{DoxyCode}

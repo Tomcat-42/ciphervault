@@ -1,0 +1,12 @@
+digraph "include/assets/cert/rsa/rsa_8192b.hpp"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="include/assets/cert\l/rsa/rsa_8192b.hpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="bench/cipher/cipher\l_rsa_benchmarks.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$cipher__rsa__benchmarks_8cpp.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="test/cert/cert_rsa\l_tests.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$cert__rsa__tests_8cpp.html",tooltip=" "];
+}

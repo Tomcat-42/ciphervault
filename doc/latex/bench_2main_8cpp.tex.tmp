@@ -1,0 +1,19 @@
+\hypertarget{bench_2main_8cpp}{}\doxysection{bench/main.cpp File Reference}
+\label{bench_2main_8cpp}\index{bench/main.cpp@{bench/main.cpp}}
+{\ttfamily \#include $<$benchmark/benchmark.\+h$>$}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{bench_2main_8cpp_a5851750faa9cfec10f7cad1f3b89697e}{BENCHMARK\+\_\+\+MAIN}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bench_2main_8cpp_a5851750faa9cfec10f7cad1f3b89697e}\label{bench_2main_8cpp_a5851750faa9cfec10f7cad1f3b89697e}} 
+\index{main.cpp@{main.cpp}!BENCHMARK\_MAIN@{BENCHMARK\_MAIN}}
+\index{BENCHMARK\_MAIN@{BENCHMARK\_MAIN}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{BENCHMARK\_MAIN()}{BENCHMARK\_MAIN()}}
+{\footnotesize\ttfamily BENCHMARK\+\_\+\+MAIN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

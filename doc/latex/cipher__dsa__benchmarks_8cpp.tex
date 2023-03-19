@@ -1,0 +1,421 @@
+\hypertarget{cipher__dsa__benchmarks_8cpp}{}\doxysection{bench/cipher/cipher\+\_\+dsa\+\_\+benchmarks.cpp File Reference}
+\label{cipher__dsa__benchmarks_8cpp}\index{bench/cipher/cipher\_dsa\_benchmarks.cpp@{bench/cipher/cipher\_dsa\_benchmarks.cpp}}
+{\ttfamily \#include $<$benchmark/benchmark.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$libciphervault/cert.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/dsa/dsa\+\_\+1024b.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/dsa/dsa\+\_\+16k.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/dsa/dsa\+\_\+2048b.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/dsa/dsa\+\_\+4096b.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/dsa/dsa\+\_\+512b.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/dsa/dsa\+\_\+8192b.\+hpp$>$}\newline
+Include dependency graph for cipher\+\_\+dsa\+\_\+benchmarks.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a685d5e4ba22666d46446bc205848d293}{BM\+\_\+cipher\+\_\+dsa\+\_\+512b\+\_\+constructor}} (benchmark\+::\+State \&state)
+\item 
+static void \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_aaef836f873cd71493ce85d04fe482f81}{BM\+\_\+cipher\+\_\+dsa\+\_\+512b\+\_\+contents}} (benchmark\+::\+State \&state)
+\item 
+static void \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a65d4ad448494e67c7eae505c6f01834d}{BM\+\_\+cipher\+\_\+dsa\+\_\+1024b\+\_\+constructor}} (benchmark\+::\+State \&state)
+\item 
+static void \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a6ce39cebd78adbbe16e7569b4d8d71b1}{BM\+\_\+cipher\+\_\+dsa\+\_\+1024b\+\_\+contents}} (benchmark\+::\+State \&state)
+\item 
+static void \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_aaed7b4322e6d8e9309742da2ffe969df}{BM\+\_\+cipher\+\_\+dsa\+\_\+2048b\+\_\+constructor}} (benchmark\+::\+State \&state)
+\item 
+static void \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a160bc8ce9b0dc22488fd1fdca1188e01}{BM\+\_\+cipher\+\_\+dsa\+\_\+2048b\+\_\+contents}} (benchmark\+::\+State \&state)
+\item 
+static void \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_adea77b016c0c6e6f14d67302d109c9ef}{BM\+\_\+cipher\+\_\+dsa\+\_\+4096b\+\_\+constructor}} (benchmark\+::\+State \&state)
+\item 
+static void \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a6c80e687299aeedcc76c63c655bf74f4}{BM\+\_\+cipher\+\_\+dsa\+\_\+4096b\+\_\+contents}} (benchmark\+::\+State \&state)
+\item 
+static void \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a7ced9189cf59540dada4af20e8faa6ce}{BM\+\_\+cipher\+\_\+dsa\+\_\+8192b\+\_\+constructor}} (benchmark\+::\+State \&state)
+\item 
+static void \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_ac1b89f97357b404eda1c9ba7988f3c94}{BM\+\_\+cipher\+\_\+dsa\+\_\+8192b\+\_\+contents}} (benchmark\+::\+State \&state)
+\item 
+static void \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_aee3bc2f1028b27223d624b34d1de5bb7}{BM\+\_\+cipher\+\_\+dsa\+\_\+16k\+\_\+constructor}} (benchmark\+::\+State \&state)
+\item 
+static void \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_acd1cbe1fb63c616334462465d53b875b}{BM\+\_\+cipher\+\_\+dsa\+\_\+16k\+\_\+contents}} (benchmark\+::\+State \&state)
+\item 
+\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a979e200b3e46e9830f4aa608ee992ac6}{BENCHMARK}} (\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a685d5e4ba22666d46446bc205848d293}{BM\+\_\+cipher\+\_\+dsa\+\_\+512b\+\_\+constructor}})
+\item 
+\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a02dcb6e35905bb03cde2fe4c18327cab}{BENCHMARK}} (\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_aaef836f873cd71493ce85d04fe482f81}{BM\+\_\+cipher\+\_\+dsa\+\_\+512b\+\_\+contents}})
+\item 
+\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_abd05af0f90f38a80524da2c559001527}{BENCHMARK}} (\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a65d4ad448494e67c7eae505c6f01834d}{BM\+\_\+cipher\+\_\+dsa\+\_\+1024b\+\_\+constructor}})
+\item 
+\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a8ac05d9f866821f3d521d3120f00edb0}{BENCHMARK}} (\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a6ce39cebd78adbbe16e7569b4d8d71b1}{BM\+\_\+cipher\+\_\+dsa\+\_\+1024b\+\_\+contents}})
+\item 
+\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a1dcaf6126effddc940e7f2ed00f9e05f}{BENCHMARK}} (\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_aaed7b4322e6d8e9309742da2ffe969df}{BM\+\_\+cipher\+\_\+dsa\+\_\+2048b\+\_\+constructor}})
+\item 
+\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a443d5f912ae3aed2f406ccfed0e248d8}{BENCHMARK}} (\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a160bc8ce9b0dc22488fd1fdca1188e01}{BM\+\_\+cipher\+\_\+dsa\+\_\+2048b\+\_\+contents}})
+\item 
+\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_ab50fcc146d800de22f4932bd3f5bc200}{BENCHMARK}} (\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_adea77b016c0c6e6f14d67302d109c9ef}{BM\+\_\+cipher\+\_\+dsa\+\_\+4096b\+\_\+constructor}})
+\item 
+\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a11915869ce7a8a3a80811557166ad516}{BENCHMARK}} (\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a6c80e687299aeedcc76c63c655bf74f4}{BM\+\_\+cipher\+\_\+dsa\+\_\+4096b\+\_\+contents}})
+\item 
+\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_ac30b6fb68260b1b903df66fffefb9614}{BENCHMARK}} (\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a7ced9189cf59540dada4af20e8faa6ce}{BM\+\_\+cipher\+\_\+dsa\+\_\+8192b\+\_\+constructor}})
+\item 
+\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a80a8af122c0e5189c8211231971aec89}{BENCHMARK}} (\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_ac1b89f97357b404eda1c9ba7988f3c94}{BM\+\_\+cipher\+\_\+dsa\+\_\+8192b\+\_\+contents}})
+\item 
+\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a75e27f61729d1d32a39c71aebaaa5af4}{BENCHMARK}} (\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_aee3bc2f1028b27223d624b34d1de5bb7}{BM\+\_\+cipher\+\_\+dsa\+\_\+16k\+\_\+constructor}})
+\item 
+\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a98b1e93df08a7671021b20c992b6c3f1}{BENCHMARK}} (\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_acd1cbe1fb63c616334462465d53b875b}{BM\+\_\+cipher\+\_\+dsa\+\_\+16k\+\_\+contents}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_abd05af0f90f38a80524da2c559001527}\label{cipher__dsa__benchmarks_8cpp_abd05af0f90f38a80524da2c559001527}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BENCHMARK@{BENCHMARK}}
+\index{BENCHMARK@{BENCHMARK}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BENCHMARK()}{BENCHMARK()}\hspace{0.1cm}{\footnotesize\ttfamily [1/12]}}
+{\footnotesize\ttfamily BENCHMARK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a65d4ad448494e67c7eae505c6f01834d}{BM\+\_\+cipher\+\_\+dsa\+\_\+1024b\+\_\+constructor}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a8ac05d9f866821f3d521d3120f00edb0}\label{cipher__dsa__benchmarks_8cpp_a8ac05d9f866821f3d521d3120f00edb0}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BENCHMARK@{BENCHMARK}}
+\index{BENCHMARK@{BENCHMARK}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BENCHMARK()}{BENCHMARK()}\hspace{0.1cm}{\footnotesize\ttfamily [2/12]}}
+{\footnotesize\ttfamily BENCHMARK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a6ce39cebd78adbbe16e7569b4d8d71b1}{BM\+\_\+cipher\+\_\+dsa\+\_\+1024b\+\_\+contents}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a75e27f61729d1d32a39c71aebaaa5af4}\label{cipher__dsa__benchmarks_8cpp_a75e27f61729d1d32a39c71aebaaa5af4}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BENCHMARK@{BENCHMARK}}
+\index{BENCHMARK@{BENCHMARK}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BENCHMARK()}{BENCHMARK()}\hspace{0.1cm}{\footnotesize\ttfamily [3/12]}}
+{\footnotesize\ttfamily BENCHMARK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_aee3bc2f1028b27223d624b34d1de5bb7}{BM\+\_\+cipher\+\_\+dsa\+\_\+16k\+\_\+constructor}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a98b1e93df08a7671021b20c992b6c3f1}\label{cipher__dsa__benchmarks_8cpp_a98b1e93df08a7671021b20c992b6c3f1}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BENCHMARK@{BENCHMARK}}
+\index{BENCHMARK@{BENCHMARK}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BENCHMARK()}{BENCHMARK()}\hspace{0.1cm}{\footnotesize\ttfamily [4/12]}}
+{\footnotesize\ttfamily BENCHMARK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_acd1cbe1fb63c616334462465d53b875b}{BM\+\_\+cipher\+\_\+dsa\+\_\+16k\+\_\+contents}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a1dcaf6126effddc940e7f2ed00f9e05f}\label{cipher__dsa__benchmarks_8cpp_a1dcaf6126effddc940e7f2ed00f9e05f}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BENCHMARK@{BENCHMARK}}
+\index{BENCHMARK@{BENCHMARK}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BENCHMARK()}{BENCHMARK()}\hspace{0.1cm}{\footnotesize\ttfamily [5/12]}}
+{\footnotesize\ttfamily BENCHMARK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_aaed7b4322e6d8e9309742da2ffe969df}{BM\+\_\+cipher\+\_\+dsa\+\_\+2048b\+\_\+constructor}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a443d5f912ae3aed2f406ccfed0e248d8}\label{cipher__dsa__benchmarks_8cpp_a443d5f912ae3aed2f406ccfed0e248d8}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BENCHMARK@{BENCHMARK}}
+\index{BENCHMARK@{BENCHMARK}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BENCHMARK()}{BENCHMARK()}\hspace{0.1cm}{\footnotesize\ttfamily [6/12]}}
+{\footnotesize\ttfamily BENCHMARK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a160bc8ce9b0dc22488fd1fdca1188e01}{BM\+\_\+cipher\+\_\+dsa\+\_\+2048b\+\_\+contents}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_ab50fcc146d800de22f4932bd3f5bc200}\label{cipher__dsa__benchmarks_8cpp_ab50fcc146d800de22f4932bd3f5bc200}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BENCHMARK@{BENCHMARK}}
+\index{BENCHMARK@{BENCHMARK}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BENCHMARK()}{BENCHMARK()}\hspace{0.1cm}{\footnotesize\ttfamily [7/12]}}
+{\footnotesize\ttfamily BENCHMARK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_adea77b016c0c6e6f14d67302d109c9ef}{BM\+\_\+cipher\+\_\+dsa\+\_\+4096b\+\_\+constructor}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a11915869ce7a8a3a80811557166ad516}\label{cipher__dsa__benchmarks_8cpp_a11915869ce7a8a3a80811557166ad516}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BENCHMARK@{BENCHMARK}}
+\index{BENCHMARK@{BENCHMARK}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BENCHMARK()}{BENCHMARK()}\hspace{0.1cm}{\footnotesize\ttfamily [8/12]}}
+{\footnotesize\ttfamily BENCHMARK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a6c80e687299aeedcc76c63c655bf74f4}{BM\+\_\+cipher\+\_\+dsa\+\_\+4096b\+\_\+contents}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a979e200b3e46e9830f4aa608ee992ac6}\label{cipher__dsa__benchmarks_8cpp_a979e200b3e46e9830f4aa608ee992ac6}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BENCHMARK@{BENCHMARK}}
+\index{BENCHMARK@{BENCHMARK}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BENCHMARK()}{BENCHMARK()}\hspace{0.1cm}{\footnotesize\ttfamily [9/12]}}
+{\footnotesize\ttfamily BENCHMARK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a685d5e4ba22666d46446bc205848d293}{BM\+\_\+cipher\+\_\+dsa\+\_\+512b\+\_\+constructor}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a02dcb6e35905bb03cde2fe4c18327cab}\label{cipher__dsa__benchmarks_8cpp_a02dcb6e35905bb03cde2fe4c18327cab}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BENCHMARK@{BENCHMARK}}
+\index{BENCHMARK@{BENCHMARK}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BENCHMARK()}{BENCHMARK()}\hspace{0.1cm}{\footnotesize\ttfamily [10/12]}}
+{\footnotesize\ttfamily BENCHMARK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_aaef836f873cd71493ce85d04fe482f81}{BM\+\_\+cipher\+\_\+dsa\+\_\+512b\+\_\+contents}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_ac30b6fb68260b1b903df66fffefb9614}\label{cipher__dsa__benchmarks_8cpp_ac30b6fb68260b1b903df66fffefb9614}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BENCHMARK@{BENCHMARK}}
+\index{BENCHMARK@{BENCHMARK}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BENCHMARK()}{BENCHMARK()}\hspace{0.1cm}{\footnotesize\ttfamily [11/12]}}
+{\footnotesize\ttfamily BENCHMARK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_a7ced9189cf59540dada4af20e8faa6ce}{BM\+\_\+cipher\+\_\+dsa\+\_\+8192b\+\_\+constructor}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a80a8af122c0e5189c8211231971aec89}\label{cipher__dsa__benchmarks_8cpp_a80a8af122c0e5189c8211231971aec89}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BENCHMARK@{BENCHMARK}}
+\index{BENCHMARK@{BENCHMARK}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BENCHMARK()}{BENCHMARK()}\hspace{0.1cm}{\footnotesize\ttfamily [12/12]}}
+{\footnotesize\ttfamily BENCHMARK (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_ac1b89f97357b404eda1c9ba7988f3c94}{BM\+\_\+cipher\+\_\+dsa\+\_\+8192b\+\_\+contents}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a65d4ad448494e67c7eae505c6f01834d}\label{cipher__dsa__benchmarks_8cpp_a65d4ad448494e67c7eae505c6f01834d}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BM\_cipher\_dsa\_1024b\_constructor@{BM\_cipher\_dsa\_1024b\_constructor}}
+\index{BM\_cipher\_dsa\_1024b\_constructor@{BM\_cipher\_dsa\_1024b\_constructor}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BM\_cipher\_dsa\_1024b\_constructor()}{BM\_cipher\_dsa\_1024b\_constructor()}}
+{\footnotesize\ttfamily static void BM\+\_\+cipher\+\_\+dsa\+\_\+1024b\+\_\+constructor (\begin{DoxyParamCaption}\item[{benchmark\+::\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source}{cipher\+\_\+dsa\+\_\+benchmarks.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \_\ :\ state)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ (\mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}(\mbox{\hyperlink{dsa__1024b_8hpp_a19b2ef0f83ad8c79677c001feb7aeedf}{assets\_cert\_dsa\_1024b\_dsa\_example\_cert\_der}}));}
+\DoxyCodeLine{00028\ \ \ \}}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{dsa__1024b_8hpp_a19b2ef0f83ad8c79677c001feb7aeedf}{assets\+\_\+cert\+\_\+dsa\+\_\+1024b\+\_\+dsa\+\_\+example\+\_\+cert\+\_\+der}}.
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a6ce39cebd78adbbe16e7569b4d8d71b1}\label{cipher__dsa__benchmarks_8cpp_a6ce39cebd78adbbe16e7569b4d8d71b1}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BM\_cipher\_dsa\_1024b\_contents@{BM\_cipher\_dsa\_1024b\_contents}}
+\index{BM\_cipher\_dsa\_1024b\_contents@{BM\_cipher\_dsa\_1024b\_contents}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BM\_cipher\_dsa\_1024b\_contents()}{BM\_cipher\_dsa\_1024b\_contents()}}
+{\footnotesize\ttfamily static void BM\+\_\+cipher\+\_\+dsa\+\_\+1024b\+\_\+contents (\begin{DoxyParamCaption}\item[{benchmark\+::\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source}{cipher\+\_\+dsa\+\_\+benchmarks.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{auto}\ cert\ =\ \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}(\mbox{\hyperlink{dsa__1024b_8hpp_a19b2ef0f83ad8c79677c001feb7aeedf}{assets\_cert\_dsa\_1024b\_dsa\_example\_cert\_der}});}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \_\ :\ state)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ cert.get\_contents();}
+\DoxyCodeLine{00035\ \ \ \}}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{dsa__1024b_8hpp_a19b2ef0f83ad8c79677c001feb7aeedf}{assets\+\_\+cert\+\_\+dsa\+\_\+1024b\+\_\+dsa\+\_\+example\+\_\+cert\+\_\+der}}.
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_aee3bc2f1028b27223d624b34d1de5bb7}\label{cipher__dsa__benchmarks_8cpp_aee3bc2f1028b27223d624b34d1de5bb7}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BM\_cipher\_dsa\_16k\_constructor@{BM\_cipher\_dsa\_16k\_constructor}}
+\index{BM\_cipher\_dsa\_16k\_constructor@{BM\_cipher\_dsa\_16k\_constructor}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BM\_cipher\_dsa\_16k\_constructor()}{BM\_cipher\_dsa\_16k\_constructor()}}
+{\footnotesize\ttfamily static void BM\+\_\+cipher\+\_\+dsa\+\_\+16k\+\_\+constructor (\begin{DoxyParamCaption}\item[{benchmark\+::\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source}{cipher\+\_\+dsa\+\_\+benchmarks.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \_\ :\ state)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ (\mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}(\mbox{\hyperlink{dsa__16k_8hpp_ab67c6d14bce975a7305bd1839192bb2f}{assets\_cert\_dsa\_16k\_dsa\_example\_cert\_der}}));}
+\DoxyCodeLine{00080\ \ \ \}}
+\DoxyCodeLine{00081\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{dsa__16k_8hpp_ab67c6d14bce975a7305bd1839192bb2f}{assets\+\_\+cert\+\_\+dsa\+\_\+16k\+\_\+dsa\+\_\+example\+\_\+cert\+\_\+der}}.
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_acd1cbe1fb63c616334462465d53b875b}\label{cipher__dsa__benchmarks_8cpp_acd1cbe1fb63c616334462465d53b875b}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BM\_cipher\_dsa\_16k\_contents@{BM\_cipher\_dsa\_16k\_contents}}
+\index{BM\_cipher\_dsa\_16k\_contents@{BM\_cipher\_dsa\_16k\_contents}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BM\_cipher\_dsa\_16k\_contents()}{BM\_cipher\_dsa\_16k\_contents()}}
+{\footnotesize\ttfamily static void BM\+\_\+cipher\+\_\+dsa\+\_\+16k\+\_\+contents (\begin{DoxyParamCaption}\item[{benchmark\+::\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source}{cipher\+\_\+dsa\+\_\+benchmarks.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{auto}\ cert\ =\ \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}(\mbox{\hyperlink{dsa__16k_8hpp_ab67c6d14bce975a7305bd1839192bb2f}{assets\_cert\_dsa\_16k\_dsa\_example\_cert\_der}});}
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \_\ :\ state)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ cert.get\_contents();}
+\DoxyCodeLine{00087\ \ \ \}}
+\DoxyCodeLine{00088\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{dsa__16k_8hpp_ab67c6d14bce975a7305bd1839192bb2f}{assets\+\_\+cert\+\_\+dsa\+\_\+16k\+\_\+dsa\+\_\+example\+\_\+cert\+\_\+der}}.
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_aaed7b4322e6d8e9309742da2ffe969df}\label{cipher__dsa__benchmarks_8cpp_aaed7b4322e6d8e9309742da2ffe969df}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BM\_cipher\_dsa\_2048b\_constructor@{BM\_cipher\_dsa\_2048b\_constructor}}
+\index{BM\_cipher\_dsa\_2048b\_constructor@{BM\_cipher\_dsa\_2048b\_constructor}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BM\_cipher\_dsa\_2048b\_constructor()}{BM\_cipher\_dsa\_2048b\_constructor()}}
+{\footnotesize\ttfamily static void BM\+\_\+cipher\+\_\+dsa\+\_\+2048b\+\_\+constructor (\begin{DoxyParamCaption}\item[{benchmark\+::\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source}{cipher\+\_\+dsa\+\_\+benchmarks.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \_\ :\ state)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ (\mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}(\mbox{\hyperlink{dsa__2048b_8hpp_a7a11145400984ad04bc51f03a6032745}{assets\_cert\_dsa\_2048b\_dsa\_example\_cert\_der}}));}
+\DoxyCodeLine{00041\ \ \ \}}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{dsa__2048b_8hpp_a7a11145400984ad04bc51f03a6032745}{assets\+\_\+cert\+\_\+dsa\+\_\+2048b\+\_\+dsa\+\_\+example\+\_\+cert\+\_\+der}}.
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a160bc8ce9b0dc22488fd1fdca1188e01}\label{cipher__dsa__benchmarks_8cpp_a160bc8ce9b0dc22488fd1fdca1188e01}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BM\_cipher\_dsa\_2048b\_contents@{BM\_cipher\_dsa\_2048b\_contents}}
+\index{BM\_cipher\_dsa\_2048b\_contents@{BM\_cipher\_dsa\_2048b\_contents}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BM\_cipher\_dsa\_2048b\_contents()}{BM\_cipher\_dsa\_2048b\_contents()}}
+{\footnotesize\ttfamily static void BM\+\_\+cipher\+\_\+dsa\+\_\+2048b\+\_\+contents (\begin{DoxyParamCaption}\item[{benchmark\+::\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source}{cipher\+\_\+dsa\+\_\+benchmarks.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{auto}\ cert\ =\ \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}(\mbox{\hyperlink{dsa__2048b_8hpp_a7a11145400984ad04bc51f03a6032745}{assets\_cert\_dsa\_2048b\_dsa\_example\_cert\_der}});}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \_\ :\ state)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ cert.get\_contents();}
+\DoxyCodeLine{00048\ \ \ \}}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{dsa__2048b_8hpp_a7a11145400984ad04bc51f03a6032745}{assets\+\_\+cert\+\_\+dsa\+\_\+2048b\+\_\+dsa\+\_\+example\+\_\+cert\+\_\+der}}.
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_adea77b016c0c6e6f14d67302d109c9ef}\label{cipher__dsa__benchmarks_8cpp_adea77b016c0c6e6f14d67302d109c9ef}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BM\_cipher\_dsa\_4096b\_constructor@{BM\_cipher\_dsa\_4096b\_constructor}}
+\index{BM\_cipher\_dsa\_4096b\_constructor@{BM\_cipher\_dsa\_4096b\_constructor}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BM\_cipher\_dsa\_4096b\_constructor()}{BM\_cipher\_dsa\_4096b\_constructor()}}
+{\footnotesize\ttfamily static void BM\+\_\+cipher\+\_\+dsa\+\_\+4096b\+\_\+constructor (\begin{DoxyParamCaption}\item[{benchmark\+::\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source}{cipher\+\_\+dsa\+\_\+benchmarks.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \_\ :\ state)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ (\mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}(\mbox{\hyperlink{dsa__4096b_8hpp_a3ed777bbd4e717fe26446a11b087a194}{assets\_cert\_dsa\_4096b\_dsa\_example\_cert\_der}}));}
+\DoxyCodeLine{00054\ \ \ \}}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{dsa__4096b_8hpp_a3ed777bbd4e717fe26446a11b087a194}{assets\+\_\+cert\+\_\+dsa\+\_\+4096b\+\_\+dsa\+\_\+example\+\_\+cert\+\_\+der}}.
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a6c80e687299aeedcc76c63c655bf74f4}\label{cipher__dsa__benchmarks_8cpp_a6c80e687299aeedcc76c63c655bf74f4}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BM\_cipher\_dsa\_4096b\_contents@{BM\_cipher\_dsa\_4096b\_contents}}
+\index{BM\_cipher\_dsa\_4096b\_contents@{BM\_cipher\_dsa\_4096b\_contents}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BM\_cipher\_dsa\_4096b\_contents()}{BM\_cipher\_dsa\_4096b\_contents()}}
+{\footnotesize\ttfamily static void BM\+\_\+cipher\+\_\+dsa\+\_\+4096b\+\_\+contents (\begin{DoxyParamCaption}\item[{benchmark\+::\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source}{cipher\+\_\+dsa\+\_\+benchmarks.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{auto}\ cert\ =\ \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}(\mbox{\hyperlink{dsa__4096b_8hpp_a3ed777bbd4e717fe26446a11b087a194}{assets\_cert\_dsa\_4096b\_dsa\_example\_cert\_der}});}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \_\ :\ state)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ cert.get\_contents();}
+\DoxyCodeLine{00061\ \ \ \}}
+\DoxyCodeLine{00062\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{dsa__4096b_8hpp_a3ed777bbd4e717fe26446a11b087a194}{assets\+\_\+cert\+\_\+dsa\+\_\+4096b\+\_\+dsa\+\_\+example\+\_\+cert\+\_\+der}}.
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a685d5e4ba22666d46446bc205848d293}\label{cipher__dsa__benchmarks_8cpp_a685d5e4ba22666d46446bc205848d293}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BM\_cipher\_dsa\_512b\_constructor@{BM\_cipher\_dsa\_512b\_constructor}}
+\index{BM\_cipher\_dsa\_512b\_constructor@{BM\_cipher\_dsa\_512b\_constructor}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BM\_cipher\_dsa\_512b\_constructor()}{BM\_cipher\_dsa\_512b\_constructor()}}
+{\footnotesize\ttfamily static void BM\+\_\+cipher\+\_\+dsa\+\_\+512b\+\_\+constructor (\begin{DoxyParamCaption}\item[{benchmark\+::\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source}{cipher\+\_\+dsa\+\_\+benchmarks.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \_\ :\ state)\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ (\mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}(\mbox{\hyperlink{dsa__512b_8hpp_a3938901e93cf1b1ae4e2c82cea79dc82}{assets\_cert\_dsa\_512b\_dsa\_example\_cert\_der}}));}
+\DoxyCodeLine{00015\ \ \ \}}
+\DoxyCodeLine{00016\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{dsa__512b_8hpp_a3938901e93cf1b1ae4e2c82cea79dc82}{assets\+\_\+cert\+\_\+dsa\+\_\+512b\+\_\+dsa\+\_\+example\+\_\+cert\+\_\+der}}.
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_aaef836f873cd71493ce85d04fe482f81}\label{cipher__dsa__benchmarks_8cpp_aaef836f873cd71493ce85d04fe482f81}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BM\_cipher\_dsa\_512b\_contents@{BM\_cipher\_dsa\_512b\_contents}}
+\index{BM\_cipher\_dsa\_512b\_contents@{BM\_cipher\_dsa\_512b\_contents}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BM\_cipher\_dsa\_512b\_contents()}{BM\_cipher\_dsa\_512b\_contents()}}
+{\footnotesize\ttfamily static void BM\+\_\+cipher\+\_\+dsa\+\_\+512b\+\_\+contents (\begin{DoxyParamCaption}\item[{benchmark\+::\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source}{cipher\+\_\+dsa\+\_\+benchmarks.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{auto}\ cert\ =\ \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}(\mbox{\hyperlink{dsa__512b_8hpp_a3938901e93cf1b1ae4e2c82cea79dc82}{assets\_cert\_dsa\_512b\_dsa\_example\_cert\_der}});}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \_\ :\ state)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ cert.get\_contents();}
+\DoxyCodeLine{00022\ \ \ \}}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{dsa__512b_8hpp_a3938901e93cf1b1ae4e2c82cea79dc82}{assets\+\_\+cert\+\_\+dsa\+\_\+512b\+\_\+dsa\+\_\+example\+\_\+cert\+\_\+der}}.
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_a7ced9189cf59540dada4af20e8faa6ce}\label{cipher__dsa__benchmarks_8cpp_a7ced9189cf59540dada4af20e8faa6ce}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BM\_cipher\_dsa\_8192b\_constructor@{BM\_cipher\_dsa\_8192b\_constructor}}
+\index{BM\_cipher\_dsa\_8192b\_constructor@{BM\_cipher\_dsa\_8192b\_constructor}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BM\_cipher\_dsa\_8192b\_constructor()}{BM\_cipher\_dsa\_8192b\_constructor()}}
+{\footnotesize\ttfamily static void BM\+\_\+cipher\+\_\+dsa\+\_\+8192b\+\_\+constructor (\begin{DoxyParamCaption}\item[{benchmark\+::\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source}{cipher\+\_\+dsa\+\_\+benchmarks.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \_\ :\ state)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ (\mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}(\mbox{\hyperlink{dsa__8192b_8hpp_a87f01f8313841e947c394cd22c42a43b}{assets\_cert\_dsa\_8192b\_dsa\_example\_cert\_der}}));}
+\DoxyCodeLine{00067\ \ \ \}}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{dsa__8192b_8hpp_a87f01f8313841e947c394cd22c42a43b}{assets\+\_\+cert\+\_\+dsa\+\_\+8192b\+\_\+dsa\+\_\+example\+\_\+cert\+\_\+der}}.
+
+\mbox{\Hypertarget{cipher__dsa__benchmarks_8cpp_ac1b89f97357b404eda1c9ba7988f3c94}\label{cipher__dsa__benchmarks_8cpp_ac1b89f97357b404eda1c9ba7988f3c94}} 
+\index{cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}!BM\_cipher\_dsa\_8192b\_contents@{BM\_cipher\_dsa\_8192b\_contents}}
+\index{BM\_cipher\_dsa\_8192b\_contents@{BM\_cipher\_dsa\_8192b\_contents}!cipher\_dsa\_benchmarks.cpp@{cipher\_dsa\_benchmarks.cpp}}
+\doxysubsubsection{\texorpdfstring{BM\_cipher\_dsa\_8192b\_contents()}{BM\_cipher\_dsa\_8192b\_contents()}}
+{\footnotesize\ttfamily static void BM\+\_\+cipher\+\_\+dsa\+\_\+8192b\+\_\+contents (\begin{DoxyParamCaption}\item[{benchmark\+::\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{cipher__dsa__benchmarks_8cpp_source}{cipher\+\_\+dsa\+\_\+benchmarks.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{auto}\ cert\ =\ \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}(\mbox{\hyperlink{dsa__8192b_8hpp_a87f01f8313841e947c394cd22c42a43b}{assets\_cert\_dsa\_8192b\_dsa\_example\_cert\_der}});}
+\DoxyCodeLine{00072\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \_\ :\ state)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ cert.get\_contents();}
+\DoxyCodeLine{00074\ \ \ \}}
+\DoxyCodeLine{00075\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{dsa__8192b_8hpp_a87f01f8313841e947c394cd22c42a43b}{assets\+\_\+cert\+\_\+dsa\+\_\+8192b\+\_\+dsa\+\_\+example\+\_\+cert\+\_\+der}}.
+

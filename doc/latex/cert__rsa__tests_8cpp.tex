@@ -1,0 +1,249 @@
+\hypertarget{cert__rsa__tests_8cpp}{}\doxysection{test/cert/cert\+\_\+rsa\+\_\+tests.cpp File Reference}
+\label{cert__rsa__tests_8cpp}\index{test/cert/cert\_rsa\_tests.cpp@{test/cert/cert\_rsa\_tests.cpp}}
+{\ttfamily \#include $<$gtest/gtest.\+h$>$}\newline
+{\ttfamily \#include $<$libciphervault/cert.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/rsa/rsa\+\_\+1024b.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/rsa/rsa\+\_\+16k.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/rsa/rsa\+\_\+2048b.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/rsa/rsa\+\_\+32k.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/rsa/rsa\+\_\+4096b.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/rsa/rsa\+\_\+512b.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/rsa/rsa\+\_\+8192b.\+hpp$>$}\newline
+{\ttfamily \#include $<$assets/cert/rsa/rsa\+\_\+999b.\+hpp$>$}\newline
+Include dependency graph for cert\+\_\+rsa\+\_\+tests.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cert__rsa__tests_8cpp_a9fd7d25ef8c974f9f6720be0f2767266}{TEST\+\_\+F}} (\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}, test\+\_\+cert\+\_\+rsa\+\_\+512b)
+\item 
+\mbox{\hyperlink{cert__rsa__tests_8cpp_afc8e783c352ca79c3ce6ed4716e71bb2}{TEST\+\_\+F}} (\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}, test\+\_\+cert\+\_\+rsa\+\_\+999b)
+\item 
+\mbox{\hyperlink{cert__rsa__tests_8cpp_a1c92d270a9d1718070d138b36dea4dbb}{TEST\+\_\+F}} (\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}, test\+\_\+cert\+\_\+rsa\+\_\+1024b)
+\item 
+\mbox{\hyperlink{cert__rsa__tests_8cpp_a8db4ca297f09d93864d5fc8718e59b43}{TEST\+\_\+F}} (\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}, test\+\_\+cert\+\_\+rsa\+\_\+2048b)
+\item 
+\mbox{\hyperlink{cert__rsa__tests_8cpp_a816166c266efb5680d8a5e57e824964f}{TEST\+\_\+F}} (\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}, test\+\_\+cert\+\_\+rsa\+\_\+4096b)
+\item 
+\mbox{\hyperlink{cert__rsa__tests_8cpp_abcbb486b7c280259fed6c36a5ee00b2f}{TEST\+\_\+F}} (\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}, test\+\_\+cert\+\_\+rsa\+\_\+8192b)
+\item 
+\mbox{\hyperlink{cert__rsa__tests_8cpp_a3c6816272aa768a26fb86b9d5bcd9d18}{TEST\+\_\+F}} (\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}, test\+\_\+cert\+\_\+rsa\+\_\+16k)
+\item 
+\mbox{\hyperlink{cert__rsa__tests_8cpp_a673f3fbff741971a47c2c590b5992620}{TEST\+\_\+F}} (\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}, test\+\_\+cert\+\_\+rsa\+\_\+32k)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cert__rsa__tests_8cpp_a1c92d270a9d1718070d138b36dea4dbb}\label{cert__rsa__tests_8cpp_a1c92d270a9d1718070d138b36dea4dbb}} 
+\index{cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}}]{,  }\item[{test\+\_\+cert\+\_\+rsa\+\_\+1024b}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{cert__rsa__tests_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{cert__rsa__tests_8cpp_source}{cert\+\_\+rsa\+\_\+tests.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_rsa\_1024b.get\_subject();}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_rsa\_1024b.get\_issuer();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00074\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{00078\ \ \ EXPECT\_TRUE(result);}
+\DoxyCodeLine{00079\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{cert__rsa__tests_8cpp_a3c6816272aa768a26fb86b9d5bcd9d18}\label{cert__rsa__tests_8cpp_a3c6816272aa768a26fb86b9d5bcd9d18}} 
+\index{cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}}]{,  }\item[{test\+\_\+cert\+\_\+rsa\+\_\+16k}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{cert__rsa__tests_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{cert__rsa__tests_8cpp_source}{cert\+\_\+rsa\+\_\+tests.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00122\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_rsa\_16k.get\_subject();}
+\DoxyCodeLine{00123\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_rsa\_16k.get\_issuer();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00126\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{00130\ \ \ EXPECT\_TRUE(result);}
+\DoxyCodeLine{00131\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{cert__rsa__tests_8cpp_a8db4ca297f09d93864d5fc8718e59b43}\label{cert__rsa__tests_8cpp_a8db4ca297f09d93864d5fc8718e59b43}} 
+\index{cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}}]{,  }\item[{test\+\_\+cert\+\_\+rsa\+\_\+2048b}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{cert__rsa__tests_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{cert__rsa__tests_8cpp_source}{cert\+\_\+rsa\+\_\+tests.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00083\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_rsa\_2048b.get\_subject();}
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_rsa\_2048b.get\_issuer();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00087\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{00091\ \ \ EXPECT\_TRUE(result);}
+\DoxyCodeLine{00092\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{cert__rsa__tests_8cpp_a673f3fbff741971a47c2c590b5992620}\label{cert__rsa__tests_8cpp_a673f3fbff741971a47c2c590b5992620}} 
+\index{cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}}]{,  }\item[{test\+\_\+cert\+\_\+rsa\+\_\+32k}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{cert__rsa__tests_8cpp_source_l00133}{133}} of file \mbox{\hyperlink{cert__rsa__tests_8cpp_source}{cert\+\_\+rsa\+\_\+tests.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00135\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_rsa\_32k.get\_subject();}
+\DoxyCodeLine{00136\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_rsa\_32k.get\_issuer();}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00139\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{00143\ \ \ EXPECT\_TRUE(result);}
+\DoxyCodeLine{00144\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{cert__rsa__tests_8cpp_a816166c266efb5680d8a5e57e824964f}\label{cert__rsa__tests_8cpp_a816166c266efb5680d8a5e57e824964f}} 
+\index{cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}}]{,  }\item[{test\+\_\+cert\+\_\+rsa\+\_\+4096b}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{cert__rsa__tests_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{cert__rsa__tests_8cpp_source}{cert\+\_\+rsa\+\_\+tests.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00096\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_rsa\_4096b.get\_subject();}
+\DoxyCodeLine{00097\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_rsa\_4096b.get\_issuer();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00100\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{00104\ \ \ EXPECT\_TRUE(result);}
+\DoxyCodeLine{00105\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{cert__rsa__tests_8cpp_a9fd7d25ef8c974f9f6720be0f2767266}\label{cert__rsa__tests_8cpp_a9fd7d25ef8c974f9f6720be0f2767266}} 
+\index{cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}}]{,  }\item[{test\+\_\+cert\+\_\+rsa\+\_\+512b}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{cert__rsa__tests_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{cert__rsa__tests_8cpp_source}{cert\+\_\+rsa\+\_\+tests.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_rsa\_512b.get\_subject();}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_rsa\_512b.get\_issuer();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{00052\ \ \ EXPECT\_TRUE(result);}
+\DoxyCodeLine{00053\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{cert__rsa__tests_8cpp_abcbb486b7c280259fed6c36a5ee00b2f}\label{cert__rsa__tests_8cpp_abcbb486b7c280259fed6c36a5ee00b2f}} 
+\index{cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}}]{,  }\item[{test\+\_\+cert\+\_\+rsa\+\_\+8192b}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{cert__rsa__tests_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{cert__rsa__tests_8cpp_source}{cert\+\_\+rsa\+\_\+tests.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00109\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_rsa\_8192b.get\_subject();}
+\DoxyCodeLine{00110\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_rsa\_8192b.get\_issuer();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00113\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{00117\ \ \ EXPECT\_TRUE(result);}
+\DoxyCodeLine{00118\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{cert__rsa__tests_8cpp_afc8e783c352ca79c3ce6ed4716e71bb2}\label{cert__rsa__tests_8cpp_afc8e783c352ca79c3ce6ed4716e71bb2}} 
+\index{cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}!TEST\_F@{TEST\_F}}
+\index{TEST\_F@{TEST\_F}!cert\_rsa\_tests.cpp@{cert\_rsa\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_F()}{TEST\_F()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily TEST\+\_\+F (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCertRsaTest}{Cert\+Rsa\+Test}}}]{,  }\item[{test\+\_\+cert\+\_\+rsa\+\_\+999b}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{cert__rsa__tests_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{cert__rsa__tests_8cpp_source}{cert\+\_\+rsa\+\_\+tests.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00057\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_rsa\_999b.get\_subject();}
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_rsa\_999b.get\_issuer();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{00065\ \ \ EXPECT\_FALSE(result);}
+\DoxyCodeLine{00066\ \}}
+
+\end{DoxyCode}

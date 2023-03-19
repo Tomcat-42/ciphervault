@@ -1,0 +1,238 @@
+\hypertarget{classciphervault_1_1cert}{}\doxysection{ciphervault\+::cert Class Reference}
+\label{classciphervault_1_1cert}\index{ciphervault::cert@{ciphervault::cert}}
+
+
+A class to represent a x509 DER certificate.  
+
+
+
+
+{\ttfamily \#include $<$cert.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classciphervault_1_1cert_a243cb81b6e158e169f1c8eae17481808}{cert}} ()=default
+\item 
+\mbox{\hyperlink{classciphervault_1_1cert_aedcbff045a90822e50221fc02a7880b7}{cert}} (const \mbox{\hyperlink{classciphervault_1_1cert}{cert}} \&)=delete
+\item 
+\mbox{\hyperlink{classciphervault_1_1cert_a8e70f8fe7039961efb8e214d6bf0f7ae}{cert}} (\mbox{\hyperlink{classciphervault_1_1cert}{cert}} \&\&)=default
+\item 
+\mbox{\hyperlink{classciphervault_1_1cert}{cert}} \& \mbox{\hyperlink{classciphervault_1_1cert_a26a84ac79dbaa3002a74d5017cc76303}{operator=}} (const \mbox{\hyperlink{classciphervault_1_1cert}{cert}} \&)=delete
+\item 
+\mbox{\hyperlink{classciphervault_1_1cert}{cert}} \& \mbox{\hyperlink{classciphervault_1_1cert_a69c2fc4dd86776bf2f45ebd3aacc17d3}{operator=}} (\mbox{\hyperlink{classciphervault_1_1cert}{cert}} \&\&)=default
+\item 
+\mbox{\hyperlink{classciphervault_1_1cert_ad8fe0710c50b359fc5581acf89448eb8}{cert}} (const std\+::vector$<$ unsigned char $>$ \&\mbox{\hyperlink{classciphervault_1_1cert}{cert}})
+\begin{DoxyCompactList}\small\item\em Construct a new cert object from a vector of chars. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classciphervault_1_1cert_a6d0400c242a5fae3028d468f01cdcc3f}{$\sim$cert}} ()
+\item 
+std\+::string \mbox{\hyperlink{classciphervault_1_1cert_a2836199df37763d05cbeed8a7aa0ca19}{get\+\_\+contents}} () const
+\begin{DoxyCompactList}\small\item\em Get all the details of the certificate. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classciphervault_1_1cert_a433957885f7d3ad91208f846d9827d16}{get\+\_\+issuer}} () const
+\begin{DoxyCompactList}\small\item\em Get the issuer name of the certificate. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classciphervault_1_1cert_af92ce517a90f751eaaf240b112a4ab2e}{get\+\_\+subject}} () const
+\begin{DoxyCompactList}\small\item\em Get the subject name of the certificate. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classciphervault_1_1cert_a25d870596f317a161b6507564d34866f}{get\+\_\+not\+\_\+before}} () const
+\begin{DoxyCompactList}\small\item\em Get the not before date of the certificate. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classciphervault_1_1cert_a0241c84bb4ba3f3d2d1e522d5af46f50}{get\+\_\+not\+\_\+after}} () const
+\begin{DoxyCompactList}\small\item\em Get the not after date of the certificate. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classciphervault_1_1cert_ad55ba14d78103da5acc54c12fd51e46d}{get\+\_\+signature\+\_\+algorithm}} () const
+\begin{DoxyCompactList}\small\item\em Get the signature algorithm of the certificate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classciphervault_1_1cert_a0bf28aeb1f37cb7703e18f5698bdacd5}{setup}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the Open\+SSL library. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classciphervault_1_1cert_a7e99f4300e3780235690e2cac9daecbe}{cleanup}} ()
+\begin{DoxyCompactList}\small\item\em Cleanup the Open\+SSL library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceciphervault_ad0e46e953a50dfcfb78ff655fc9ef445}{ciphervault\+::x509}} \mbox{\hyperlink{classciphervault_1_1cert_a6c6305f3a0022d1b5574f1c423da3b1e}{certificate}} = \{nullptr, nullptr\}
+\begin{DoxyCompactList}\small\item\em The in-\/memory representation of the certificate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to represent a x509 DER certificate. 
+
+This class is a wrapper around the Open\+SSL x509 structure. It provides methods to get the details of the certificate. 
+
+Definition at line \mbox{\hyperlink{cert_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{cert_8hpp_source}{cert.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classciphervault_1_1cert_a243cb81b6e158e169f1c8eae17481808}\label{classciphervault_1_1cert_a243cb81b6e158e169f1c8eae17481808}} 
+\index{ciphervault::cert@{ciphervault::cert}!cert@{cert}}
+\index{cert@{cert}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{cert()}{cert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily ciphervault\+::cert\+::cert (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classciphervault_1_1cert_aedcbff045a90822e50221fc02a7880b7}\label{classciphervault_1_1cert_aedcbff045a90822e50221fc02a7880b7}} 
+\index{ciphervault::cert@{ciphervault::cert}!cert@{cert}}
+\index{cert@{cert}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{cert()}{cert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily ciphervault\+::cert\+::cert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classciphervault_1_1cert}{cert}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classciphervault_1_1cert_a8e70f8fe7039961efb8e214d6bf0f7ae}\label{classciphervault_1_1cert_a8e70f8fe7039961efb8e214d6bf0f7ae}} 
+\index{ciphervault::cert@{ciphervault::cert}!cert@{cert}}
+\index{cert@{cert}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{cert()}{cert()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily ciphervault\+::cert\+::cert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classciphervault_1_1cert}{cert}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classciphervault_1_1cert_ad8fe0710c50b359fc5581acf89448eb8}\label{classciphervault_1_1cert_ad8fe0710c50b359fc5581acf89448eb8}} 
+\index{ciphervault::cert@{ciphervault::cert}!cert@{cert}}
+\index{cert@{cert}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{cert()}{cert()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily ciphervault\+::cert\+::cert (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned char $>$ \&}]{cert }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new cert object from a vector of chars. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cert} & The certificate in DER format as a vector of chars \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classciphervault_1_1cert_a6d0400c242a5fae3028d468f01cdcc3f}\label{classciphervault_1_1cert_a6d0400c242a5fae3028d468f01cdcc3f}} 
+\index{ciphervault::cert@{ciphervault::cert}!````~cert@{$\sim$cert}}
+\index{````~cert@{$\sim$cert}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{$\sim$cert()}{~cert()}}
+{\footnotesize\ttfamily ciphervault\+::cert\+::$\sim$cert (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classciphervault_1_1cert_a7e99f4300e3780235690e2cac9daecbe}\label{classciphervault_1_1cert_a7e99f4300e3780235690e2cac9daecbe}} 
+\index{ciphervault::cert@{ciphervault::cert}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{cleanup()}{cleanup()}}
+{\footnotesize\ttfamily void ciphervault\+::cert\+::cleanup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cleanup the Open\+SSL library. 
+
+\mbox{\Hypertarget{classciphervault_1_1cert_a2836199df37763d05cbeed8a7aa0ca19}\label{classciphervault_1_1cert_a2836199df37763d05cbeed8a7aa0ca19}} 
+\index{ciphervault::cert@{ciphervault::cert}!get\_contents@{get\_contents}}
+\index{get\_contents@{get\_contents}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{get\_contents()}{get\_contents()}}
+{\footnotesize\ttfamily std\+::string ciphervault\+::cert\+::get\+\_\+contents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get all the details of the certificate. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The subject name of the certificate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classciphervault_1_1cert_a433957885f7d3ad91208f846d9827d16}\label{classciphervault_1_1cert_a433957885f7d3ad91208f846d9827d16}} 
+\index{ciphervault::cert@{ciphervault::cert}!get\_issuer@{get\_issuer}}
+\index{get\_issuer@{get\_issuer}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{get\_issuer()}{get\_issuer()}}
+{\footnotesize\ttfamily std\+::string ciphervault\+::cert\+::get\+\_\+issuer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the issuer name of the certificate. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The signature algorithm of the certificate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classciphervault_1_1cert_a0241c84bb4ba3f3d2d1e522d5af46f50}\label{classciphervault_1_1cert_a0241c84bb4ba3f3d2d1e522d5af46f50}} 
+\index{ciphervault::cert@{ciphervault::cert}!get\_not\_after@{get\_not\_after}}
+\index{get\_not\_after@{get\_not\_after}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{get\_not\_after()}{get\_not\_after()}}
+{\footnotesize\ttfamily std\+::string ciphervault\+::cert\+::get\+\_\+not\+\_\+after (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the not after date of the certificate. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The issuer name of the certificate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classciphervault_1_1cert_a25d870596f317a161b6507564d34866f}\label{classciphervault_1_1cert_a25d870596f317a161b6507564d34866f}} 
+\index{ciphervault::cert@{ciphervault::cert}!get\_not\_before@{get\_not\_before}}
+\index{get\_not\_before@{get\_not\_before}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{get\_not\_before()}{get\_not\_before()}}
+{\footnotesize\ttfamily std\+::string ciphervault\+::cert\+::get\+\_\+not\+\_\+before (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the not before date of the certificate. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The issuer name of the certificate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classciphervault_1_1cert_ad55ba14d78103da5acc54c12fd51e46d}\label{classciphervault_1_1cert_ad55ba14d78103da5acc54c12fd51e46d}} 
+\index{ciphervault::cert@{ciphervault::cert}!get\_signature\_algorithm@{get\_signature\_algorithm}}
+\index{get\_signature\_algorithm@{get\_signature\_algorithm}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{get\_signature\_algorithm()}{get\_signature\_algorithm()}}
+{\footnotesize\ttfamily std\+::string ciphervault\+::cert\+::get\+\_\+signature\+\_\+algorithm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the signature algorithm of the certificate. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The signature algorithm of the certificate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classciphervault_1_1cert_af92ce517a90f751eaaf240b112a4ab2e}\label{classciphervault_1_1cert_af92ce517a90f751eaaf240b112a4ab2e}} 
+\index{ciphervault::cert@{ciphervault::cert}!get\_subject@{get\_subject}}
+\index{get\_subject@{get\_subject}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{get\_subject()}{get\_subject()}}
+{\footnotesize\ttfamily std\+::string ciphervault\+::cert\+::get\+\_\+subject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the subject name of the certificate. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string The subject name of the certificate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classciphervault_1_1cert_a69c2fc4dd86776bf2f45ebd3aacc17d3}\label{classciphervault_1_1cert_a69c2fc4dd86776bf2f45ebd3aacc17d3}} 
+\index{ciphervault::cert@{ciphervault::cert}!operator=@{operator=}}
+\index{operator=@{operator=}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classciphervault_1_1cert}{cert}} \& ciphervault\+::cert\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classciphervault_1_1cert}{cert}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classciphervault_1_1cert_a26a84ac79dbaa3002a74d5017cc76303}\label{classciphervault_1_1cert_a26a84ac79dbaa3002a74d5017cc76303}} 
+\index{ciphervault::cert@{ciphervault::cert}!operator=@{operator=}}
+\index{operator=@{operator=}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classciphervault_1_1cert}{cert}} \& ciphervault\+::cert\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classciphervault_1_1cert}{cert}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classciphervault_1_1cert_a0bf28aeb1f37cb7703e18f5698bdacd5}\label{classciphervault_1_1cert_a0bf28aeb1f37cb7703e18f5698bdacd5}} 
+\index{ciphervault::cert@{ciphervault::cert}!setup@{setup}}
+\index{setup@{setup}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void ciphervault\+::cert\+::setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize the Open\+SSL library. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classciphervault_1_1cert_a6c6305f3a0022d1b5574f1c423da3b1e}\label{classciphervault_1_1cert_a6c6305f3a0022d1b5574f1c423da3b1e}} 
+\index{ciphervault::cert@{ciphervault::cert}!certificate@{certificate}}
+\index{certificate@{certificate}!ciphervault::cert@{ciphervault::cert}}
+\doxysubsubsection{\texorpdfstring{certificate}{certificate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceciphervault_ad0e46e953a50dfcfb78ff655fc9ef445}{ciphervault\+::x509}} ciphervault\+::cert\+::certificate = \{nullptr, nullptr\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The in-\/memory representation of the certificate. 
+
+
+
+Definition at line \mbox{\hyperlink{cert_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{cert_8hpp_source}{cert.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/libciphervault/\mbox{\hyperlink{cert_8hpp}{cert.\+hpp}}\end{DoxyCompactItemize}

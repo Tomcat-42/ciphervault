@@ -1,0 +1,34 @@
+\hypertarget{cert_8hpp}{}\doxysection{include/libciphervault/cert.hpp File Reference}
+\label{cert_8hpp}\index{include/libciphervault/cert.hpp@{include/libciphervault/cert.hpp}}
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$openssl/bio.\+h$>$}\newline
+{\ttfamily \#include $<$openssl/ssl.\+h$>$}\newline
+{\ttfamily \#include $<$openssl/x509.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for cert.\+hpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault\+::cert}}
+\begin{DoxyCompactList}\small\item\em A class to represent a x509 DER certificate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceciphervault}{ciphervault}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceciphervault_a1ac102035d88e787b5fa1cbe32860cad}{ciphervault\+::bio}} = std\+::unique\+\_\+ptr$<$ BIO, decltype(\&BIO\+\_\+free)$>$
+\item 
+using \mbox{\hyperlink{namespaceciphervault_ad0e46e953a50dfcfb78ff655fc9ef445}{ciphervault\+::x509}} = std\+::unique\+\_\+ptr$<$ X509, decltype(\&X509\+\_\+free)$>$
+\item 
+using \mbox{\hyperlink{namespaceciphervault_af4d5b3b8d8b9a9eb725c2150d8779847}{ciphervault\+::asn1\+\_\+time}} = std\+::unique\+\_\+ptr$<$ ASN1\+\_\+\+TIME, decltype(\&ASN1\+\_\+\+STRING\+\_\+free)$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{namespaceciphervault_a6d01d5a0f979cd84fa3374d6a358022d}{ciphervault\+::test}} ()
+\end{DoxyCompactItemize}

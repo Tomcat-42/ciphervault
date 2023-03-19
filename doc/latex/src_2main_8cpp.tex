@@ -1,0 +1,76 @@
+\hypertarget{src_2main_8cpp}{}\doxysection{src/main.cpp File Reference}
+\label{src_2main_8cpp}\index{src/main.cpp@{src/main.cpp}}
+{\ttfamily \#include $<$fmt/format.\+h$>$}\newline
+{\ttfamily \#include $<$openssl/asn1.\+h$>$}\newline
+{\ttfamily \#include $<$openssl/bio.\+h$>$}\newline
+{\ttfamily \#include $<$openssl/conf.\+h$>$}\newline
+{\ttfamily \#include $<$openssl/err.\+h$>$}\newline
+{\ttfamily \#include $<$openssl/pem.\+h$>$}\newline
+{\ttfamily \#include $<$openssl/x509.\+h$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$libciphervault/cert.\+hpp$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$string\+\_\+view$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{src_2main_8cpp_a217dbf8b442f20279ea00b898af96f52}{main}} (int argc, const char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{src_2main_8cpp_a217dbf8b442f20279ea00b898af96f52}\label{src_2main_8cpp_a217dbf8b442f20279ea00b898af96f52}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{src_2main_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{src_2main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordflow}{if}\ (argc\ <\ 2)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ fmt::print(\textcolor{stringliteral}{"{}Usage:\ \{\}\ <cert\_file>\(\backslash\)n"{}},\ argv[0]);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00023\ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename\ =\ argv[1];}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{comment}{//\ Read\ the\ certificate\ to\ a\ std::vector<std::byte>}}
+\DoxyCodeLine{00028\ \ \ std::ifstream\ file(filename,\ std::ios::binary);}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ fmt::print(\textcolor{stringliteral}{"{}Failed\ to\ open\ file:\ \{\}\(\backslash\)n"{}},\ filename);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00032\ \ \ \}}
+\DoxyCodeLine{00033\ \ \ std::vector<unsigned\ char>\ cert\_data((std::istreambuf\_iterator<char>(file)),}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::istreambuf\_iterator<char>());}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}\ cert(cert\_data);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{comment}{//\ std::cout\ <<\ cert.get\_contents()\ <<\ std::endl;}}
+\DoxyCodeLine{00039\ \ \ \textcolor{comment}{//\ std::cout\ <<\ cert.get\_subject()\ <<\ std::endl;}}
+\DoxyCodeLine{00040\ \ \ std::cout\ <<\ cert.get\_issuer()\ <<\ std::endl;}
+\DoxyCodeLine{00041\ \ \ std::cout\ <<\ cert.get\_not\_before()\ <<\ std::endl;}
+\DoxyCodeLine{00042\ \ \ std::cout\ <<\ cert.get\_not\_after()\ <<\ std::endl;}
+\DoxyCodeLine{00043\ \ \ std::cout\ <<\ cert.get\_signature\_algorithm()\ <<\ std::endl;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classciphervault_1_1cert_a433957885f7d3ad91208f846d9827d16}{ciphervault\+::cert\+::get\+\_\+issuer()}}, \mbox{\hyperlink{classciphervault_1_1cert_a0241c84bb4ba3f3d2d1e522d5af46f50}{ciphervault\+::cert\+::get\+\_\+not\+\_\+after()}}, \mbox{\hyperlink{classciphervault_1_1cert_a25d870596f317a161b6507564d34866f}{ciphervault\+::cert\+::get\+\_\+not\+\_\+before()}}, and \mbox{\hyperlink{classciphervault_1_1cert_ad55ba14d78103da5acc54c12fd51e46d}{ciphervault\+::cert\+::get\+\_\+signature\+\_\+algorithm()}}.
+
+Here is the call graph for this function\+:
+% FIG 1

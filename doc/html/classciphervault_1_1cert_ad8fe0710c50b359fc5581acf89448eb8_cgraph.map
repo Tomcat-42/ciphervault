@@ -1,0 +1,4 @@
+<map id="ciphervault::cert::cert" name="ciphervault::cert::cert">
+<area shape="rect" id="node1" title="Construct a new cert object from a vector of chars." alt="" coords="5,13,151,38"/>
+<area shape="rect" id="node2" href="$classciphervault_1_1cert.html#a0bf28aeb1f37cb7703e18f5698bdacd5" title="Initialize the OpenSSL library." alt="" coords="199,5,321,45"/>
+</map>

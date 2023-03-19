@@ -1,0 +1,118 @@
+\hypertarget{cert__dsa__tests_8cpp_source}{}\doxysection{cert\+\_\+dsa\+\_\+tests.\+cpp}
+\label{cert__dsa__tests_8cpp_source}\index{test/cert/cert\_dsa\_tests.cpp@{test/cert/cert\_dsa\_tests.cpp}}
+\mbox{\hyperlink{cert__dsa__tests_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <gtest/gtest.h>}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{cert_8hpp}{libciphervault/cert.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{dsa__1024b_8hpp}{assets/cert/dsa/dsa\_1024b.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{dsa__16k_8hpp}{assets/cert/dsa/dsa\_16k.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{dsa__2048b_8hpp}{assets/cert/dsa/dsa\_2048b.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{dsa__4096b_8hpp}{assets/cert/dsa/dsa\_4096b.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{dsa__512b_8hpp}{assets/cert/dsa/dsa\_512b.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{dsa__8192b_8hpp}{assets/cert/dsa/dsa\_8192b.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00011}00011\ \textcolor{comment}{//\ Test\ Certdsa\ fixture}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00012}\mbox{\hyperlink{classCertdsaTest}{00012}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCertdsaTest}{CertdsaTest}}\ :\ \textcolor{keyword}{public}\ ::testing::Test\ \{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00013}00013\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00014}\mbox{\hyperlink{classCertdsaTest_aa9ff220e74d4a8891c1e29e61c8f9d63}{00014}}\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}\ \mbox{\hyperlink{classCertdsaTest_aa9ff220e74d4a8891c1e29e61c8f9d63}{cert\_dsa\_512b}}\{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00015}00015\ \ \ \ \ \ \ \mbox{\hyperlink{dsa__512b_8hpp_a3938901e93cf1b1ae4e2c82cea79dc82}{assets\_cert\_dsa\_512b\_dsa\_example\_cert\_der}}\};}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00016}\mbox{\hyperlink{classCertdsaTest_a0c2599ae55742d1e4e349104a2151a7c}{00016}}\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}\ \mbox{\hyperlink{classCertdsaTest_a0c2599ae55742d1e4e349104a2151a7c}{cert\_dsa\_1024b}}\{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00017}00017\ \ \ \ \ \ \ \mbox{\hyperlink{dsa__1024b_8hpp_a19b2ef0f83ad8c79677c001feb7aeedf}{assets\_cert\_dsa\_1024b\_dsa\_example\_cert\_der}}\};}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00018}\mbox{\hyperlink{classCertdsaTest_ac67a4dd0abc98902476efec556264953}{00018}}\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}\ \mbox{\hyperlink{classCertdsaTest_ac67a4dd0abc98902476efec556264953}{cert\_dsa\_2048b}}\{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00019}00019\ \ \ \ \ \ \ \mbox{\hyperlink{dsa__2048b_8hpp_a7a11145400984ad04bc51f03a6032745}{assets\_cert\_dsa\_2048b\_dsa\_example\_cert\_der}}\};}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00020}\mbox{\hyperlink{classCertdsaTest_ad7542c971e4f66a0e3ff8d78353250e3}{00020}}\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}\ \mbox{\hyperlink{classCertdsaTest_ad7542c971e4f66a0e3ff8d78353250e3}{cert\_dsa\_4096b}}\{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00021}00021\ \ \ \ \ \ \ \mbox{\hyperlink{dsa__4096b_8hpp_a3ed777bbd4e717fe26446a11b087a194}{assets\_cert\_dsa\_4096b\_dsa\_example\_cert\_der}}\};}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00022}\mbox{\hyperlink{classCertdsaTest_a3cb0318450c8a97dfc4234784723cf12}{00022}}\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}\ \mbox{\hyperlink{classCertdsaTest_a3cb0318450c8a97dfc4234784723cf12}{cert\_dsa\_8192b}}\{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00023}00023\ \ \ \ \ \ \ \mbox{\hyperlink{dsa__8192b_8hpp_a87f01f8313841e947c394cd22c42a43b}{assets\_cert\_dsa\_8192b\_dsa\_example\_cert\_der}}\};}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00024}\mbox{\hyperlink{classCertdsaTest_ad80908facffca8bedf8a85949f2d0a62}{00024}}\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classciphervault_1_1cert}{ciphervault::cert}}\ \mbox{\hyperlink{classCertdsaTest_ad80908facffca8bedf8a85949f2d0a62}{cert\_dsa\_16k}}\{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00025}00025\ \ \ \ \ \ \ \mbox{\hyperlink{dsa__16k_8hpp_ab67c6d14bce975a7305bd1839192bb2f}{assets\_cert\_dsa\_16k\_dsa\_example\_cert\_der}}\};}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00027}\mbox{\hyperlink{classCertdsaTest_a8223fd16c8dc7c0e688e5d3ccb8431f4}{00027}}\ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{classCertdsaTest_a8223fd16c8dc7c0e688e5d3ccb8431f4}{expected\_subject}}\{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00028}00028\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}C=JP,\ ST=Tokyo,\ O=Frank4DD,\ CN=www.example.com"{}}\};}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00029}\mbox{\hyperlink{classCertdsaTest_ab2b51d6442f1fb3e76a559078ce1f392}{00029}}\ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{classCertdsaTest_ab2b51d6442f1fb3e76a559078ce1f392}{expected\_issuer}}\{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00030}00030\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}C=JP,\ ST=Tokyo,\ L=Chuo-\/ku,\ O=Frank4DD,\ OU=WebCert\ Support,\ CN=Frank4DD\ "{}}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00031}00031\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Web\ CA/emailAddress=support@frank4dd.com"{}}\};}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00033}\mbox{\hyperlink{classCertdsaTest_adff35180ddff527003667da581d678ed}{00033}}\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCertdsaTest_adff35180ddff527003667da581d678ed}{SetUp}}()\textcolor{keyword}{\ override\ }\{\}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00034}00034\ \};}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00036}\mbox{\hyperlink{cert__dsa__tests_8cpp_afc8b4a3a151d1b9e4cdc1f790a1c4a43}{00036}}\ \mbox{\hyperlink{cert__dsa__tests_8cpp_afc8b4a3a151d1b9e4cdc1f790a1c4a43}{TEST\_F}}(\mbox{\hyperlink{classCertdsaTest}{CertdsaTest}},\ test\_cert\_dsa\_512b)\ \{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00037}00037\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00038}00038\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_dsa\_512b.get\_subject();}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00039}00039\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_dsa\_512b.get\_issuer();}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00041}00041\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00042}00042\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00045}00045\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00046}00046\ \ \ EXPECT\_TRUE(result);}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00049}\mbox{\hyperlink{cert__dsa__tests_8cpp_a790f7933172a3a5121cfb84994855f1c}{00049}}\ \mbox{\hyperlink{cert__dsa__tests_8cpp_afc8b4a3a151d1b9e4cdc1f790a1c4a43}{TEST\_F}}(\mbox{\hyperlink{classCertdsaTest}{CertdsaTest}},\ test\_cert\_dsa\_1024b)\ \{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00050}00050\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00051}00051\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_dsa\_1024b.get\_subject();}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00052}00052\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_dsa\_1024b.get\_issuer();}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00054}00054\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00055}00055\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00058}00058\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00059}00059\ \ \ EXPECT\_TRUE(result);}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00062}\mbox{\hyperlink{cert__dsa__tests_8cpp_a7a9a1de3868b80b9461c06dddb1b9d8d}{00062}}\ \mbox{\hyperlink{cert__dsa__tests_8cpp_afc8b4a3a151d1b9e4cdc1f790a1c4a43}{TEST\_F}}(\mbox{\hyperlink{classCertdsaTest}{CertdsaTest}},\ test\_cert\_dsa\_2048b)\ \{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00063}00063\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00064}00064\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_dsa\_2048b.get\_subject();}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00065}00065\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_dsa\_2048b.get\_issuer();}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00067}00067\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00068}00068\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00071}00071\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00072}00072\ \ \ EXPECT\_TRUE(result);}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00073}00073\ \}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00075}\mbox{\hyperlink{cert__dsa__tests_8cpp_a63f3718dddb6d8209a3577e3695fb126}{00075}}\ \mbox{\hyperlink{cert__dsa__tests_8cpp_afc8b4a3a151d1b9e4cdc1f790a1c4a43}{TEST\_F}}(\mbox{\hyperlink{classCertdsaTest}{CertdsaTest}},\ test\_cert\_dsa\_4096b)\ \{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00076}00076\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00077}00077\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_dsa\_4096b.get\_subject();}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00078}00078\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_dsa\_4096b.get\_issuer();}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00080}00080\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00081}00081\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00084}00084\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00085}00085\ \ \ EXPECT\_TRUE(result);}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00088}\mbox{\hyperlink{cert__dsa__tests_8cpp_a682f2dd623e29b517423fe461bc7fc76}{00088}}\ \mbox{\hyperlink{cert__dsa__tests_8cpp_afc8b4a3a151d1b9e4cdc1f790a1c4a43}{TEST\_F}}(\mbox{\hyperlink{classCertdsaTest}{CertdsaTest}},\ test\_cert\_dsa\_8192b)\ \{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00089}00089\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00090}00090\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_dsa\_8192b.get\_subject();}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00091}00091\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_dsa\_8192b.get\_issuer();}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00093}00093\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00094}00094\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00097}00097\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00098}00098\ \ \ EXPECT\_TRUE(result);}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00101}\mbox{\hyperlink{cert__dsa__tests_8cpp_a2954ca7829365f9036d78a1632c11668}{00101}}\ \mbox{\hyperlink{cert__dsa__tests_8cpp_afc8b4a3a151d1b9e4cdc1f790a1c4a43}{TEST\_F}}(\mbox{\hyperlink{classCertdsaTest}{CertdsaTest}},\ test\_cert\_dsa\_16k)\ \{}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00102}00102\ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00103}00103\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_subject\ =\ cert\_dsa\_16k.get\_subject();}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00104}00104\ \ \ \textcolor{keyword}{const}\ std::string\ actual\_issuer\ =\ cert\_dsa\_16k.get\_issuer();}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00106}00106\ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00107}00107\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ result\ =\ (actual\_issuer\ ==\ expected\_issuer)\ \&\&}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (actual\_subject\ ==\ expected\_subject);}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00110}00110\ \ \ \textcolor{comment}{//\ Expect}}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00111}00111\ \ \ EXPECT\_TRUE(result);}
+\DoxyCodeLine{\Hypertarget{cert__dsa__tests_8cpp_source_l00112}00112\ \}}
+
+\end{DoxyCode}

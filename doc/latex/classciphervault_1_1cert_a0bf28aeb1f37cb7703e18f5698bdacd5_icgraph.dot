@@ -1,0 +1,11 @@
+digraph "ciphervault::cert::setup"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="ciphervault::cert::\lsetup",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Initialize the OpenSSL library."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="ciphervault::cert::cert",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classciphervault_1_1cert.html#ad8fe0710c50b359fc5581acf89448eb8",tooltip="Construct a new cert object from a vector of chars."];
+}
