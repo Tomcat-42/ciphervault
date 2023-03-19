@@ -8,6 +8,8 @@ cmake_policy(SET CMP0091 NEW)
 project(bench LANGUAGES CXX C)
 
 # target
+set(CMAKE_C_COMPILER "/usr/bin/clang")
+set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 add_executable(bench "")
 set_target_properties(bench PROPERTIES OUTPUT_NAME "bench")
 set_target_properties(bench PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/linux/x86_64/release")
@@ -18,7 +20,7 @@ target_include_directories(bench PRIVATE
     /usr/include
 )
 target_include_directories(bench PRIVATE
-    /home/pablo/.xmake/packages/b/benchmark/1.7.0/f560adeb922d4838b5ce55f080617dbb/include
+    /home/pablo/.xmake/packages/b/benchmark/1.7.0/41e335b0d4864392b8c21cd6ed5e875b/include
 )
 target_compile_options(bench PRIVATE
     $<$<COMPILE_LANGUAGE:C>:-m64>
@@ -33,6 +35,8 @@ else()
     target_compile_options(bench PRIVATE -Wall)
     target_compile_options(bench PRIVATE -Werror)
 endif()
+set_target_properties(bench PROPERTIES CXX_EXTENSIONS OFF)
+target_compile_features(bench PRIVATE cxx_std_23)
 if(MSVC)
     target_compile_options(bench PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
 else()
@@ -51,12 +55,14 @@ target_link_libraries(bench PRIVATE
     benchmark
     libciphervault
     fmt
+    ssl
+    crypto
     pthread
 )
 target_link_directories(bench PRIVATE
-    /home/pablo/.xmake/packages/b/benchmark/1.7.0/f560adeb922d4838b5ce55f080617dbb/lib
+    /home/pablo/.xmake/packages/b/benchmark/1.7.0/41e335b0d4864392b8c21cd6ed5e875b/lib
     build/linux/x86_64/release
-    /home/pablo/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/lib
+    /usr/lib
 )
 target_link_options(bench PRIVATE
     -m64
@@ -67,6 +73,8 @@ target_sources(bench PRIVATE
 )
 
 # target
+set(CMAKE_C_COMPILER "/usr/bin/clang")
+set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 add_executable(ciphervault "")
 set_target_properties(ciphervault PROPERTIES OUTPUT_NAME "ciphervault")
 set_target_properties(ciphervault PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/linux/x86_64/release")
@@ -77,8 +85,7 @@ target_include_directories(ciphervault PRIVATE
     /usr/include
 )
 target_include_directories(ciphervault PRIVATE
-    /home/pablo/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include
-    /home/pablo/.xmake/packages/c/cxxopts/v3.0.0/1eea793b9f4b4ec0827a4c67495d00a5/include
+    /home/pablo/.xmake/packages/c/cxxopts/v3.0.0/533f1970a0884648838ce983784f4181/include
 )
 target_compile_options(ciphervault PRIVATE
     $<$<COMPILE_LANGUAGE:C>:-m64>
@@ -93,6 +100,8 @@ else()
     target_compile_options(ciphervault PRIVATE -Wall)
     target_compile_options(ciphervault PRIVATE -Werror)
 endif()
+set_target_properties(ciphervault PROPERTIES CXX_EXTENSIONS OFF)
+target_compile_features(ciphervault PRIVATE cxx_std_23)
 if(MSVC)
     target_compile_options(ciphervault PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
 else()
@@ -108,10 +117,12 @@ if(MSVC)
 endif()
 target_link_libraries(ciphervault PRIVATE
     fmt
+    ssl
+    crypto
     libciphervault
 )
 target_link_directories(ciphervault PRIVATE
-    /home/pablo/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/lib
+    /usr/lib
     build/linux/x86_64/release
 )
 target_link_options(ciphervault PRIVATE
@@ -122,6 +133,8 @@ target_sources(ciphervault PRIVATE
 )
 
 # target
+set(CMAKE_C_COMPILER "/usr/bin/clang")
+set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 add_library(libciphervault STATIC "")
 set_target_properties(libciphervault PROPERTIES OUTPUT_NAME "libciphervault")
 set_target_properties(libciphervault PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/linux/x86_64/release")
@@ -131,8 +144,7 @@ target_include_directories(libciphervault PRIVATE
     /usr/include
 )
 target_include_directories(libciphervault PRIVATE
-    /home/pablo/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/include
-    /home/pablo/.xmake/packages/c/cxxopts/v3.0.0/1eea793b9f4b4ec0827a4c67495d00a5/include
+    /home/pablo/.xmake/packages/c/cxxopts/v3.0.0/533f1970a0884648838ce983784f4181/include
 )
 target_compile_options(libciphervault PRIVATE
     $<$<COMPILE_LANGUAGE:C>:-m64>
@@ -147,6 +159,8 @@ else()
     target_compile_options(libciphervault PRIVATE -Wall)
     target_compile_options(libciphervault PRIVATE -Werror)
 endif()
+set_target_properties(libciphervault PROPERTIES CXX_EXTENSIONS OFF)
+target_compile_features(libciphervault PRIVATE cxx_std_23)
 if(MSVC)
     target_compile_options(libciphervault PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
 else()
@@ -162,18 +176,22 @@ if(MSVC)
 endif()
 target_link_libraries(libciphervault PRIVATE
     fmt
+    ssl
+    crypto
 )
 target_link_directories(libciphervault PRIVATE
-    /home/pablo/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/lib
+    /usr/lib
 )
 target_link_options(libciphervault PRIVATE
     -m64
 )
 target_sources(libciphervault PRIVATE
-    src/libciphervault/cipher.cpp
+    src/libciphervault/cert.cpp
 )
 
 # target
+set(CMAKE_C_COMPILER "/usr/bin/clang")
+set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
 add_executable(test "")
 set_target_properties(test PROPERTIES OUTPUT_NAME "test")
 set_target_properties(test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/linux/x86_64/release")
@@ -184,7 +202,7 @@ target_include_directories(test PRIVATE
     /usr/include
 )
 target_include_directories(test PRIVATE
-    /home/pablo/.xmake/packages/g/gtest/1.12.1/77b9096bc4b34d9282f672d36b015ba9/include
+    /home/pablo/.xmake/packages/g/gtest/1.12.1/20a632ab8cd449b696b952cd2c20ce18/include
 )
 target_compile_options(test PRIVATE
     $<$<COMPILE_LANGUAGE:C>:-m64>
@@ -199,6 +217,8 @@ else()
     target_compile_options(test PRIVATE -Wall)
     target_compile_options(test PRIVATE -Werror)
 endif()
+set_target_properties(test PROPERTIES CXX_EXTENSIONS OFF)
+target_compile_features(test PRIVATE cxx_std_23)
 if(MSVC)
     target_compile_options(test PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
 else()
@@ -218,18 +238,20 @@ target_link_libraries(test PRIVATE
     gmock
     libciphervault
     fmt
+    ssl
+    crypto
     pthread
 )
 target_link_directories(test PRIVATE
-    /home/pablo/.xmake/packages/g/gtest/1.12.1/77b9096bc4b34d9282f672d36b015ba9/lib
+    /home/pablo/.xmake/packages/g/gtest/1.12.1/20a632ab8cd449b696b952cd2c20ce18/lib
     build/linux/x86_64/release
-    /home/pablo/.xmake/packages/f/fmt/9.1.0/d363b063d73b40728217e45838c2553c/lib
+    /usr/lib
 )
 target_link_options(test PRIVATE
     -m64
 )
 target_sources(test PRIVATE
-    test/cipher/cipher_tests.cpp
+    test/cert/cert_tests.cpp
     test/main.cpp
 )
 
