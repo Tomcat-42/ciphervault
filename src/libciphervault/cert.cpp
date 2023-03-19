@@ -17,11 +17,16 @@ namespace ciphervault {
   const auto bio_to_string = [](bio &bio, int size) {
     std::string str;
     str.resize(size);
-    BIO_read(bio.get(), str.data(), size);
+    const int bytes_read = BIO_read(bio.get(), str.data(), size);
+    if (bytes_read < 0) {
+      ERR_print_errors_fp(stderr);
+      throw std::runtime_error("Unable to read from BIO");
+    }
+    str.resize(bytes_read);
     return str;
   };
 
-  cert::cert(const std::vector<char> &cert) {
+  cert::cert(const std::vector<unsigned char> &cert) {
     this->setup();
 
     ciphervault::bio cert_bio(BIO_new_mem_buf(cert.data(), cert.size()),

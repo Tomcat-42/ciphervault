@@ -39,17 +39,17 @@ namespace ciphervault {
     void cleanup();
 
   public:
-    cert() = delete;
+    cert() = default;
     cert(const cert &) = delete;
-    cert(cert &&) = delete;
+    cert(cert &&) = default;
     cert &operator=(const cert &) = delete;
-    cert &operator=(cert &&) = delete;
+    cert &operator=(cert &&) = default;
 
     /**
      * @brief Construct a new cert object from a vector of chars
      * @param cert The certificate in DER format as a vector of chars
      * */
-    explicit cert(const std::vector<char> &cert);
+    explicit cert(const std::vector<unsigned char> &cert);
 
     ~cert();
 
