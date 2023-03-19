@@ -9,7 +9,7 @@ add_cxflags("-std=c++2b", { force = true })
 add_includedirs("include", "/usr/local/include", "/usr/include")
 
 -- add libraries
-local project_libs = { "fmt", "cxxopts", "openssl3" }
+local project_libs = { "fmt", "cxxopts", "openssl3", "tabulate" }
 local test_libs = { "gtest" }
 local bench_libs = { "benchmark" }
 

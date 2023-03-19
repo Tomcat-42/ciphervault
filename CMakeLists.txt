@@ -25,6 +25,8 @@ target_include_directories(bench PRIVATE
 target_compile_options(bench PRIVATE
     $<$<COMPILE_LANGUAGE:C>:-m64>
     $<$<COMPILE_LANGUAGE:CXX>:-m64>
+    $<$<COMPILE_LANGUAGE:C>:-std=c++2b>
+    $<$<COMPILE_LANGUAGE:CXX>:-std=c++2b>
     $<$<COMPILE_LANGUAGE:C>:-DNDEBUG>
     $<$<COMPILE_LANGUAGE:CXX>:-DNDEBUG>
 )
@@ -35,8 +37,6 @@ else()
     target_compile_options(bench PRIVATE -Wall)
     target_compile_options(bench PRIVATE -Werror)
 endif()
-set_target_properties(bench PROPERTIES CXX_EXTENSIONS OFF)
-target_compile_features(bench PRIVATE cxx_std_23)
 if(MSVC)
     target_compile_options(bench PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
 else()
@@ -68,7 +68,8 @@ target_link_options(bench PRIVATE
     -m64
 )
 target_sources(bench PRIVATE
-    bench/cipher/cipher_benchmarks.cpp
+    bench/cipher/cipher_rsa_benchmarks.cpp
+    bench/cipher/cipher_dsa_benchmarks.cpp
     bench/main.cpp
 )
 
@@ -86,10 +87,13 @@ target_include_directories(ciphervault PRIVATE
 )
 target_include_directories(ciphervault PRIVATE
     /home/pablo/.xmake/packages/c/cxxopts/v3.0.0/533f1970a0884648838ce983784f4181/include
+    /home/pablo/.xmake/packages/t/tabulate/1.4/f332da4973a7470eb1f7ff02b32fe5d6/include
 )
 target_compile_options(ciphervault PRIVATE
     $<$<COMPILE_LANGUAGE:C>:-m64>
     $<$<COMPILE_LANGUAGE:CXX>:-m64>
+    $<$<COMPILE_LANGUAGE:C>:-std=c++2b>
+    $<$<COMPILE_LANGUAGE:CXX>:-std=c++2b>
     $<$<COMPILE_LANGUAGE:C>:-DNDEBUG>
     $<$<COMPILE_LANGUAGE:CXX>:-DNDEBUG>
 )
@@ -100,8 +104,6 @@ else()
     target_compile_options(ciphervault PRIVATE -Wall)
     target_compile_options(ciphervault PRIVATE -Werror)
 endif()
-set_target_properties(ciphervault PROPERTIES CXX_EXTENSIONS OFF)
-target_compile_features(ciphervault PRIVATE cxx_std_23)
 if(MSVC)
     target_compile_options(ciphervault PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
 else()
@@ -145,10 +147,13 @@ target_include_directories(libciphervault PRIVATE
 )
 target_include_directories(libciphervault PRIVATE
     /home/pablo/.xmake/packages/c/cxxopts/v3.0.0/533f1970a0884648838ce983784f4181/include
+    /home/pablo/.xmake/packages/t/tabulate/1.4/f332da4973a7470eb1f7ff02b32fe5d6/include
 )
 target_compile_options(libciphervault PRIVATE
     $<$<COMPILE_LANGUAGE:C>:-m64>
     $<$<COMPILE_LANGUAGE:CXX>:-m64>
+    $<$<COMPILE_LANGUAGE:C>:-std=c++2b>
+    $<$<COMPILE_LANGUAGE:CXX>:-std=c++2b>
     $<$<COMPILE_LANGUAGE:C>:-DNDEBUG>
     $<$<COMPILE_LANGUAGE:CXX>:-DNDEBUG>
 )
@@ -159,8 +164,6 @@ else()
     target_compile_options(libciphervault PRIVATE -Wall)
     target_compile_options(libciphervault PRIVATE -Werror)
 endif()
-set_target_properties(libciphervault PROPERTIES CXX_EXTENSIONS OFF)
-target_compile_features(libciphervault PRIVATE cxx_std_23)
 if(MSVC)
     target_compile_options(libciphervault PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
 else()
@@ -207,6 +210,8 @@ target_include_directories(test PRIVATE
 target_compile_options(test PRIVATE
     $<$<COMPILE_LANGUAGE:C>:-m64>
     $<$<COMPILE_LANGUAGE:CXX>:-m64>
+    $<$<COMPILE_LANGUAGE:C>:-std=c++2b>
+    $<$<COMPILE_LANGUAGE:CXX>:-std=c++2b>
     $<$<COMPILE_LANGUAGE:C>:-DNDEBUG>
     $<$<COMPILE_LANGUAGE:CXX>:-DNDEBUG>
 )
@@ -217,8 +222,6 @@ else()
     target_compile_options(test PRIVATE -Wall)
     target_compile_options(test PRIVATE -Werror)
 endif()
-set_target_properties(test PROPERTIES CXX_EXTENSIONS OFF)
-target_compile_features(test PRIVATE cxx_std_23)
 if(MSVC)
     target_compile_options(test PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
 else()
@@ -251,7 +254,8 @@ target_link_options(test PRIVATE
     -m64
 )
 target_sources(test PRIVATE
-    test/cert/cert_tests.cpp
+    test/cert/cert_rsa_tests.cpp
+    test/cert/cert_dsa_tests.cpp
     test/main.cpp
 )
 
