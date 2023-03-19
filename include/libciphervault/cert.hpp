@@ -88,5 +88,11 @@ namespace ciphervault {
      * @return std::string The signature algorithm of the certificate
      * */
     std::string get_signature_algorithm() const;
+
+    // overload the << operator
+    friend std::ostream &operator<<(std::ostream &os, const cert &c);
+
+    // overload the >> operator
+    friend std::istream &operator>>(std::istream &is, cert &c);
   };
 } // namespace ciphervault

@@ -9,11 +9,11 @@
 #include <memory>
 #include <string>
 
+#include <iostream>
+
+#include <tabulate/table.hpp>
+
 namespace ciphervault {
-  std::string test() { return "test"; }
-
-  // constexpr size_t SECONDS_IN_DAY = 24 * 60 * 60;
-
   const auto bio_to_string = [](bio &bio, int size) {
     std::string str;
     str.resize(size);
@@ -132,6 +132,32 @@ namespace ciphervault {
     ciphervault::bio output(BIO_new(BIO_s_mem()), BIO_free);
     std::string signature_algorithm_str = bio_to_string(output, 4096);
     return signature_algorithm_str;
+  }
+
+  // << operator overload for cert
+  std::ostream &operator<<(std::ostream &os, const cert &c) {
+    tabulate::Table table;
+    table.add_row({"Issuer", c.get_issuer()});
+    table.add_row({"Subject", c.get_subject()});
+    table.add_row({"Not Before", c.get_not_before()});
+    table.add_row({"Not After", c.get_not_after()});
+    // table.add_row({"Signature Algorithm", c.get_signature_algorithm()});
+    table.format()
+        .font_style({tabulate::FontStyle::bold})
+        .font_align(tabulate::FontAlign::center)
+        .font_color(tabulate::Color::white)
+        .border_color(tabulate::Color::white)
+        .corner_color(tabulate::Color::white);
+
+    return os << table;
+  }
+
+  // >> operator overload for cert. The stream must be a vector of bytes
+  std::istream &operator>>(std::istream &is, cert &c) {
+    std::vector<unsigned char> cert_bytes((std::istreambuf_iterator<char>(is)),
+                                          std::istreambuf_iterator<char>());
+    c = cert(cert_bytes);
+    return is;
   }
 
   cert::~cert() { this->cleanup(); }
