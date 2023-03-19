@@ -4,7 +4,6 @@
 #include <gtest/gtest.h>
 #include <libciphervault/cert.hpp>
 
-#include <assets/cert/dsa/dsa_16k.hpp>
 #include <assets/cert/rsa/rsa_1024b.hpp>
 #include <assets/cert/rsa/rsa_16k.hpp>
 #include <assets/cert/rsa/rsa_2048b.hpp>
