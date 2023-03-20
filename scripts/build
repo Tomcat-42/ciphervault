@@ -3,6 +3,6 @@
 DOCKER_BUILDKIT=1 docker build -t tomcat0x42/ciphervault .
 
 # extract the binaries from the container
-docker create --name extract ciphervault
+docker create --name extract tomcat0x42/ciphervault
 docker cp extract:/ciphervault ./
 docker rm extract
