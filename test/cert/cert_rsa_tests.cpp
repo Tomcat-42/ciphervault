@@ -31,6 +31,8 @@ protected:
   void SetUp() override {}
 };
 
+TEST(yes, yes) { EXPECT_TRUE(false); }
+
 TEST_F(CertRsaTest, test_cert_rsa_512b) {
   // Arrange
   const std::string actual_subject = cert_rsa_512b.get_subject();
