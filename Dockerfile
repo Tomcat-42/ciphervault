@@ -9,21 +9,17 @@ COPY --chmod=0755 --chown=cppdev:cppdev . ./
 RUN xrepo install -y fmt cxxopts gtest benchmark tabulate
 RUN xmake build -y
 
-# test
-# RUN xmake run test
+FROM ubuntu:23.04 AS runner
 
-# benchmark
-# RUN xmake run bench
+WORKDIR /ciphervault
 
-# ciphervault
-# RUN xmake run ciphervault
+# runtime deps
+RUN apt-get update && apt-get install -y \
+    libssl3 \
+    mawk \
+    && rm -rf /var/lib/apt/lists/*
 
-# FROM cppdev:latest
 
-# FROM cppdev:latest AS runner
-#
-# COPY --chown=cppdev:cppdev --from=builder \
-#     /home/cppdev/ciphervault/build/linux/x86_64/release/ciphervault \
-#     ./app/
-#
-# ENTRYPOINT [ "./app/ciphervault" ]
+COPY --from=builder \
+    /home/cppdev/ciphervault/ciphervault \
+    ./
