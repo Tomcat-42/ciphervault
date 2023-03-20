@@ -24,6 +24,8 @@ jobs:
         run: ${PWD}/scripts/build
       - name: test
         run: ${PWD}/scripts/test
+      - name: publish
+        run: ${PWD}/scripts/publish
     # - name: Build Docker image
     #   run: docker build -t tomcat0x42/ciphervault .
     # - name: Create Docker container
