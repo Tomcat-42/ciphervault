@@ -31,8 +31,6 @@ default:  ciphervault ciphervault_test ciphervault_bench libciphervault
 
 all:  ciphervault ciphervault_test ciphervault_bench libciphervault
 
-.PHONY: default all  ciphervault ciphervault_test ciphervault_bench libciphervault
-
 ciphervault: ciphervault/ciphervault
 ciphervault/ciphervault: ciphervault/libciphervault.a build/.objs/ciphervault/linux/x86_64/release/src/main.cpp.o
 	@echo linking.release ciphervault
@@ -97,7 +95,7 @@ build/.objs/libciphervault/linux/x86_64/release/src/libciphervault/cert.cpp.o: s
 	@mkdir -p build/.objs/libciphervault/linux/x86_64/release/src/libciphervault
 	@$(CXX) -c $(libciphervault_CXXFLAGS) -o build/.objs/libciphervault/linux/x86_64/release/src/libciphervault/cert.cpp.o src/libciphervault/cert.cpp > build/.build.log 2>&1
 
-clean:  clean_ciphervault clean_ciphervault_test clean_ciphervault_bench clean_libciphervault
+.PHONY clean:  clean_ciphervault clean_ciphervault_test clean_ciphervault_bench clean_libciphervault
 
 clean_ciphervault:  clean_libciphervault
 	@rm -rf ciphervault/ciphervault
@@ -118,8 +116,44 @@ clean_ciphervault_bench:  clean_libciphervault
 	@rm -rf build/.objs/ciphervault_bench/linux/x86_64/release/bench/cipher/cipher_dsa_benchmarks.cpp.o
 	@rm -rf build/.objs/ciphervault_bench/linux/x86_64/release/bench/main.cpp.o
 
-clean_libciphervault: 
+clean_libciphervault:
 	@rm -rf ciphervault/libciphervault.a
 	@rm -rf ciphervault/libciphervault.sym
 	@rm -rf build/.objs/libciphervault/linux/x86_64/release/src/libciphervault/cert.cpp.o
 
+install_libciphervault: libciphervault
+	@mkdir -p $(DESTDIR)/usr/local/lib
+	@cp -f ciphervault/libciphervault.a $(DESTDIR)/usr/local/lib/libciphervault.a
+	@chmod 644 $(DESTDIR)/usr/local/lib/libciphervault.a
+	@mkdir -p $(DESTDIR)/usr/local/include/libciphervault
+	@cp -f include/libciphervault/cert.hpp $(DESTDIR)/usr/local/include/libciphervault/cert.hpp
+	@chmod 644 $(DESTDIR)/usr/local/include/libciphervault/cert.hpp
+
+install_ciphervault: ciphervault
+	@mkdir -p $(DESTDIR)/usr/local/bin
+	@cp -f ciphervault/ciphervault $(DESTDIR)/usr/local/bin/ciphervault
+	@chmod 755 $(DESTDIR)/usr/local/bin/ciphervault
+
+install_ciphervault_test: ciphervault_test
+	@mkdir -p $(DESTDIR)/usr/local/bin
+	@cp -f ciphervault/ciphervault_test $(DESTDIR)/usr/local/bin/ciphervault_test
+	@chmod 755 $(DESTDIR)/usr/local/bin/ciphervault_test
+
+install_ciphervault_bench: ciphervault_bench
+	@mkdir -p $(DESTDIR)/usr/local/bin
+	@cp -f ciphervault/ciphervault_bench $(DESTDIR)/usr/local/bin/ciphervault_bench
+	@chmod 755 $(DESTDIR)/usr/local/bin/ciphervault_bench
+
+uninstall:
+	@rm -f $(DESTDIR)/usr/local/lib/libciphervault.a
+	@rm -f $(DESTDIR)/usr/local/include/libciphervault/cert.hpp
+	@rm -f $(DESTDIR)/usr/local/bin/ciphervault
+	@rm -f $(DESTDIR)/usr/local/bin/ciphervault_test
+	@rm -f $(DESTDIR)/usr/local/bin/ciphervault_bench
+
+install: install_libciphervault install_ciphervault install_ciphervault_test install_ciphervault_bench
+
+test: ciphervault_test
+	@./ciphervault/ciphervault_test
+
+.PHONY: default all  ciphervault ciphervault_test ciphervault_bench libciphervault test install clean
