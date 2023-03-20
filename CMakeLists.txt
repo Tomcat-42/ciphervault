@@ -5,80 +5,14 @@
 # project
 cmake_minimum_required(VERSION 3.15.0)
 cmake_policy(SET CMP0091 NEW)
-project(bench LANGUAGES CXX C)
+project(ciphervault LANGUAGES CXX C)
 
 # target
-set(CMAKE_C_COMPILER "/usr/bin/clang")
-set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
-add_executable(bench "")
-set_target_properties(bench PROPERTIES OUTPUT_NAME "bench")
-set_target_properties(bench PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/linux/x86_64/release")
-add_dependencies(bench libciphervault)
-target_include_directories(bench PRIVATE
-    include
-    /usr/local/include
-    /usr/include
-)
-target_include_directories(bench PRIVATE
-    /home/pablo/.xmake/packages/b/benchmark/1.7.0/41e335b0d4864392b8c21cd6ed5e875b/include
-)
-target_compile_options(bench PRIVATE
-    $<$<COMPILE_LANGUAGE:C>:-m64>
-    $<$<COMPILE_LANGUAGE:CXX>:-m64>
-    $<$<COMPILE_LANGUAGE:C>:-std=c++2b>
-    $<$<COMPILE_LANGUAGE:CXX>:-std=c++2b>
-    $<$<COMPILE_LANGUAGE:C>:-DNDEBUG>
-    $<$<COMPILE_LANGUAGE:CXX>:-DNDEBUG>
-)
-if(MSVC)
-    target_compile_options(bench PRIVATE -W3)
-    target_compile_options(bench PRIVATE -WX)
-else()
-    target_compile_options(bench PRIVATE -Wall)
-    target_compile_options(bench PRIVATE -Werror)
-endif()
-if(MSVC)
-    target_compile_options(bench PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
-else()
-    target_compile_options(bench PRIVATE -O3)
-endif()
-if(MSVC)
-else()
-    target_compile_options(bench PRIVATE -fvisibility=hidden)
-endif()
-if(MSVC)
-    set_property(TARGET bench PROPERTY
-        MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
-endif()
-target_link_libraries(bench PRIVATE
-    benchmark_main
-    benchmark
-    libciphervault
-    fmt
-    ssl
-    crypto
-    pthread
-)
-target_link_directories(bench PRIVATE
-    /home/pablo/.xmake/packages/b/benchmark/1.7.0/41e335b0d4864392b8c21cd6ed5e875b/lib
-    build/linux/x86_64/release
-    /usr/lib
-)
-target_link_options(bench PRIVATE
-    -m64
-)
-target_sources(bench PRIVATE
-    bench/cipher/cipher_rsa_benchmarks.cpp
-    bench/cipher/cipher_dsa_benchmarks.cpp
-    bench/main.cpp
-)
-
-# target
-set(CMAKE_C_COMPILER "/usr/bin/clang")
-set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
+set(CMAKE_C_COMPILER "clang")
+set(CMAKE_CXX_COMPILER "clang++")
 add_executable(ciphervault "")
 set_target_properties(ciphervault PROPERTIES OUTPUT_NAME "ciphervault")
-set_target_properties(ciphervault PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/linux/x86_64/release")
+set_target_properties(ciphervault PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/ciphervault")
 add_dependencies(ciphervault libciphervault)
 target_include_directories(ciphervault PRIVATE
     include
@@ -125,7 +59,7 @@ target_link_libraries(ciphervault PRIVATE
 )
 target_link_directories(ciphervault PRIVATE
     /usr/lib
-    build/linux/x86_64/release
+    ciphervault
 )
 target_link_options(ciphervault PRIVATE
     -m64
@@ -135,11 +69,144 @@ target_sources(ciphervault PRIVATE
 )
 
 # target
-set(CMAKE_C_COMPILER "/usr/bin/clang")
-set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
+set(CMAKE_C_COMPILER "clang")
+set(CMAKE_CXX_COMPILER "clang++")
+add_executable(ciphervault_bench "")
+set_target_properties(ciphervault_bench PROPERTIES OUTPUT_NAME "ciphervault_bench")
+set_target_properties(ciphervault_bench PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/ciphervault")
+add_dependencies(ciphervault_bench libciphervault)
+target_include_directories(ciphervault_bench PRIVATE
+    include
+    /usr/local/include
+    /usr/include
+)
+target_include_directories(ciphervault_bench PRIVATE
+    /home/pablo/.xmake/packages/b/benchmark/1.7.0/41e335b0d4864392b8c21cd6ed5e875b/include
+)
+target_compile_options(ciphervault_bench PRIVATE
+    $<$<COMPILE_LANGUAGE:C>:-m64>
+    $<$<COMPILE_LANGUAGE:CXX>:-m64>
+    $<$<COMPILE_LANGUAGE:C>:-std=c++2b>
+    $<$<COMPILE_LANGUAGE:CXX>:-std=c++2b>
+    $<$<COMPILE_LANGUAGE:C>:-DNDEBUG>
+    $<$<COMPILE_LANGUAGE:CXX>:-DNDEBUG>
+)
+if(MSVC)
+    target_compile_options(ciphervault_bench PRIVATE -W3)
+    target_compile_options(ciphervault_bench PRIVATE -WX)
+else()
+    target_compile_options(ciphervault_bench PRIVATE -Wall)
+    target_compile_options(ciphervault_bench PRIVATE -Werror)
+endif()
+if(MSVC)
+    target_compile_options(ciphervault_bench PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
+else()
+    target_compile_options(ciphervault_bench PRIVATE -O3)
+endif()
+if(MSVC)
+else()
+    target_compile_options(ciphervault_bench PRIVATE -fvisibility=hidden)
+endif()
+if(MSVC)
+    set_property(TARGET ciphervault_bench PROPERTY
+        MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif()
+target_link_libraries(ciphervault_bench PRIVATE
+    benchmark_main
+    benchmark
+    libciphervault
+    fmt
+    ssl
+    crypto
+    pthread
+)
+target_link_directories(ciphervault_bench PRIVATE
+    /home/pablo/.xmake/packages/b/benchmark/1.7.0/41e335b0d4864392b8c21cd6ed5e875b/lib
+    ciphervault
+    /usr/lib
+)
+target_link_options(ciphervault_bench PRIVATE
+    -m64
+)
+target_sources(ciphervault_bench PRIVATE
+    bench/cipher/cipher_rsa_benchmarks.cpp
+    bench/cipher/cipher_dsa_benchmarks.cpp
+    bench/main.cpp
+)
+
+# target
+set(CMAKE_C_COMPILER "clang")
+set(CMAKE_CXX_COMPILER "clang++")
+add_executable(ciphervault_test "")
+set_target_properties(ciphervault_test PROPERTIES OUTPUT_NAME "ciphervault_test")
+set_target_properties(ciphervault_test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/ciphervault")
+add_dependencies(ciphervault_test libciphervault)
+target_include_directories(ciphervault_test PRIVATE
+    include
+    /usr/local/include
+    /usr/include
+)
+target_include_directories(ciphervault_test PRIVATE
+    /home/pablo/.xmake/packages/g/gtest/1.12.1/20a632ab8cd449b696b952cd2c20ce18/include
+)
+target_compile_options(ciphervault_test PRIVATE
+    $<$<COMPILE_LANGUAGE:C>:-m64>
+    $<$<COMPILE_LANGUAGE:CXX>:-m64>
+    $<$<COMPILE_LANGUAGE:C>:-std=c++2b>
+    $<$<COMPILE_LANGUAGE:CXX>:-std=c++2b>
+    $<$<COMPILE_LANGUAGE:C>:-DNDEBUG>
+    $<$<COMPILE_LANGUAGE:CXX>:-DNDEBUG>
+)
+if(MSVC)
+    target_compile_options(ciphervault_test PRIVATE -W3)
+    target_compile_options(ciphervault_test PRIVATE -WX)
+else()
+    target_compile_options(ciphervault_test PRIVATE -Wall)
+    target_compile_options(ciphervault_test PRIVATE -Werror)
+endif()
+if(MSVC)
+    target_compile_options(ciphervault_test PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
+else()
+    target_compile_options(ciphervault_test PRIVATE -O3)
+endif()
+if(MSVC)
+else()
+    target_compile_options(ciphervault_test PRIVATE -fvisibility=hidden)
+endif()
+if(MSVC)
+    set_property(TARGET ciphervault_test PROPERTY
+        MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif()
+target_link_libraries(ciphervault_test PRIVATE
+    gtest
+    gtest_main
+    gmock
+    libciphervault
+    fmt
+    ssl
+    crypto
+    pthread
+)
+target_link_directories(ciphervault_test PRIVATE
+    /home/pablo/.xmake/packages/g/gtest/1.12.1/20a632ab8cd449b696b952cd2c20ce18/lib
+    ciphervault
+    /usr/lib
+)
+target_link_options(ciphervault_test PRIVATE
+    -m64
+)
+target_sources(ciphervault_test PRIVATE
+    test/cert/cert_rsa_tests.cpp
+    test/cert/cert_dsa_tests.cpp
+    test/main.cpp
+)
+
+# target
+set(CMAKE_C_COMPILER "clang")
+set(CMAKE_CXX_COMPILER "clang++")
 add_library(libciphervault STATIC "")
 set_target_properties(libciphervault PROPERTIES OUTPUT_NAME "libciphervault")
-set_target_properties(libciphervault PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/linux/x86_64/release")
+set_target_properties(libciphervault PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/ciphervault")
 target_include_directories(libciphervault PRIVATE
     include
     /usr/local/include
@@ -190,72 +257,5 @@ target_link_options(libciphervault PRIVATE
 )
 target_sources(libciphervault PRIVATE
     src/libciphervault/cert.cpp
-)
-
-# target
-set(CMAKE_C_COMPILER "/usr/bin/clang")
-set(CMAKE_CXX_COMPILER "/usr/bin/clang++")
-add_executable(test "")
-set_target_properties(test PROPERTIES OUTPUT_NAME "test")
-set_target_properties(test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/linux/x86_64/release")
-add_dependencies(test libciphervault)
-target_include_directories(test PRIVATE
-    include
-    /usr/local/include
-    /usr/include
-)
-target_include_directories(test PRIVATE
-    /home/pablo/.xmake/packages/g/gtest/1.12.1/20a632ab8cd449b696b952cd2c20ce18/include
-)
-target_compile_options(test PRIVATE
-    $<$<COMPILE_LANGUAGE:C>:-m64>
-    $<$<COMPILE_LANGUAGE:CXX>:-m64>
-    $<$<COMPILE_LANGUAGE:C>:-std=c++2b>
-    $<$<COMPILE_LANGUAGE:CXX>:-std=c++2b>
-    $<$<COMPILE_LANGUAGE:C>:-DNDEBUG>
-    $<$<COMPILE_LANGUAGE:CXX>:-DNDEBUG>
-)
-if(MSVC)
-    target_compile_options(test PRIVATE -W3)
-    target_compile_options(test PRIVATE -WX)
-else()
-    target_compile_options(test PRIVATE -Wall)
-    target_compile_options(test PRIVATE -Werror)
-endif()
-if(MSVC)
-    target_compile_options(test PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
-else()
-    target_compile_options(test PRIVATE -O3)
-endif()
-if(MSVC)
-else()
-    target_compile_options(test PRIVATE -fvisibility=hidden)
-endif()
-if(MSVC)
-    set_property(TARGET test PROPERTY
-        MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
-endif()
-target_link_libraries(test PRIVATE
-    gtest
-    gtest_main
-    gmock
-    libciphervault
-    fmt
-    ssl
-    crypto
-    pthread
-)
-target_link_directories(test PRIVATE
-    /home/pablo/.xmake/packages/g/gtest/1.12.1/20a632ab8cd449b696b952cd2c20ce18/lib
-    build/linux/x86_64/release
-    /usr/lib
-)
-target_link_options(test PRIVATE
-    -m64
-)
-target_sources(test PRIVATE
-    test/cert/cert_rsa_tests.cpp
-    test/cert/cert_dsa_tests.cpp
-    test/main.cpp
 )
 

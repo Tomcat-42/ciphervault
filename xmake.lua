@@ -1,4 +1,8 @@
 set_languages("c++2b")
+set_toolchains("clang")
+set_toolset("cc", "clang")
+set_toolset("cxx", "clang")
+
 add_rules("mode.debug", "mode.release")
 
 set_warnings("all", "error")
@@ -19,9 +23,12 @@ add_requires(table.unpack(bench_libs))
 
 -- main project library
 target("libciphervault")
+set_prefixname("")
 set_kind("static")
 add_files("src/**/*.cpp")
 add_packages(table.unpack(project_libs))
+set_installdir("/usr/local")
+set_targetdir("./ciphervault")
 
 -- main project executable
 target("ciphervault")
@@ -29,20 +36,26 @@ set_kind("binary")
 add_files("src/main.cpp")
 add_packages(table.unpack(project_libs))
 add_deps("libciphervault")
+set_installdir("/usr/local")
+set_targetdir("./ciphervault")
 
 -- test suites
-target("test")
+target("ciphervault_test")
 set_kind("binary")
 add_files("test/**/*.cpp", "test/main.cpp")
 add_packages(table.unpack(test_libs))
 add_deps("libciphervault")
+set_installdir("/usr/local")
+set_targetdir("./ciphervault")
 
 -- benchmarks
-target("bench")
+target("ciphervault_bench")
 set_kind("binary")
 add_files("bench/**/*.cpp", "bench/main.cpp")
 add_packages(table.unpack(bench_libs))
 add_deps("libciphervault")
+set_installdir("/usr/local")
+set_targetdir("./ciphervault")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
