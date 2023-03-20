@@ -1,5 +1,4 @@
 name: CI/CD
-# Only deploy when a new tag is pushed
 on:
   push:
     tags:
@@ -10,7 +9,7 @@ permissions:
 jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
-    name: Build, test and deploy
+    name: Build, test, deploy to docker hub and release
     steps:
       - name: Check out this repository
         uses: actions/checkout@v3
@@ -41,17 +40,3 @@ jobs:
           fail_on_unmatched_files: true
           name: ciphervault
           tag_name: ciphervault
-    # - name: Build Docker image
-    #   run: docker build -t tomcat0x42/ciphervault .
-    # - name: Create Docker container
-    #   run: docker create --name ciphervault-container tomcat0x42/ciphervault-container
-    # - name: Copy out the files
-    #   run: docker cp ciphervault-container:/project/src/build/${APP_NAME}.uf2 ./${APP_NAME}.uf2
-    # - name: Put environment variable into the env context
-    #   run: echo "app_name=$APP_NAME" >> $GITHUB_ENV
-    # - name: Push to release
-    #   uses: softprops/action-gh-release@v1
-    #   if: startsWith(github.ref, 'refs/tags/')
-    #   with:
-    #     files: ${{ env.app_name }}.uf2
-    #     body_path: CHANGELOG.md
