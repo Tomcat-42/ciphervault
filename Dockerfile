@@ -23,3 +23,5 @@ RUN apt-get update && apt-get install -y \
 COPY --from=builder \
     /home/cppdev/ciphervault/ciphervault \
     ./
+
+ENTRYPOINT ["/ciphervault/ciphervault"]
