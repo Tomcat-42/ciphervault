@@ -5,7 +5,7 @@ on:
     tags:
       - "v*.*.*"
 jobs:
-  build-deploy:
+  build-test-deploy:
     runs-on: ubuntu-latest
     name: Build, test and deploy
     steps:
@@ -23,7 +23,7 @@ jobs:
       - name: build
         run: ${PWD}/scripts/build
       - name: test
-        run: docker image ls
+        run: ${PWD}/scripts/test
     # - name: Build Docker image
     #   run: docker build -t tomcat0x42/ciphervault .
     # - name: Create Docker container
