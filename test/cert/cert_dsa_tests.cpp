@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <libciphervault/cert.hpp>
+#include <cipher/cert.hpp>
 
 #include <assets/cert/dsa/dsa_1024b.hpp>
 #include <assets/cert/dsa/dsa_16k.hpp>
@@ -11,17 +11,17 @@
 // Test Certdsa fixture
 class CertdsaTest : public ::testing::Test {
 protected:
-  const ciphervault::cert cert_dsa_512b{
+  const cipher::cert cert_dsa_512b{
       assets_cert_dsa_512b_dsa_example_cert_der};
-  const ciphervault::cert cert_dsa_1024b{
+  const cipher::cert cert_dsa_1024b{
       assets_cert_dsa_1024b_dsa_example_cert_der};
-  const ciphervault::cert cert_dsa_2048b{
+  const cipher::cert cert_dsa_2048b{
       assets_cert_dsa_2048b_dsa_example_cert_der};
-  const ciphervault::cert cert_dsa_4096b{
+  const cipher::cert cert_dsa_4096b{
       assets_cert_dsa_4096b_dsa_example_cert_der};
-  const ciphervault::cert cert_dsa_8192b{
+  const cipher::cert cert_dsa_8192b{
       assets_cert_dsa_8192b_dsa_example_cert_der};
-  const ciphervault::cert cert_dsa_16k{
+  const cipher::cert cert_dsa_16k{
       assets_cert_dsa_16k_dsa_example_cert_der};
 
   const std::string expected_subject{

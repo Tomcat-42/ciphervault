@@ -1,5 +1,5 @@
+#include <cipher/cert.hpp>
 #include <gtest/gtest.h>
-#include <libciphervault/cert.hpp>
 
 #include <assets/cert/rsa/rsa_1024b.hpp>
 #include <assets/cert/rsa/rsa_16k.hpp>
@@ -13,22 +13,14 @@
 // Test CertRsa fixture
 class CertRsaTest : public ::testing::Test {
 protected:
-  const ciphervault::cert cert_rsa_512b{
-      assets_cert_rsa_512b_rsa_example_cert_der};
-  const ciphervault::cert cert_rsa_999b{
-      assets_cert_rsa_999b_rsa_example_cert_der};
-  const ciphervault::cert cert_rsa_1024b{
-      assets_cert_rsa_1024b_rsa_example_cert_der};
-  const ciphervault::cert cert_rsa_2048b{
-      assets_cert_rsa_2048b_rsa_example_cert_der};
-  const ciphervault::cert cert_rsa_4096b{
-      assets_cert_rsa_4096b_rsa_example_cert_der};
-  const ciphervault::cert cert_rsa_8192b{
-      assets_cert_rsa_8192b_rsa_example_cert_der};
-  const ciphervault::cert cert_rsa_16k{
-      assets_cert_rsa_16k_rsa_example_cert_der};
-  const ciphervault::cert cert_rsa_32k{
-      assets_cert_rsa_32k_rsa_example_cert_der};
+  const cipher::cert cert_rsa_512b{assets_cert_rsa_512b_rsa_example_cert_der};
+  const cipher::cert cert_rsa_999b{assets_cert_rsa_999b_rsa_example_cert_der};
+  const cipher::cert cert_rsa_1024b{assets_cert_rsa_1024b_rsa_example_cert_der};
+  const cipher::cert cert_rsa_2048b{assets_cert_rsa_2048b_rsa_example_cert_der};
+  const cipher::cert cert_rsa_4096b{assets_cert_rsa_4096b_rsa_example_cert_der};
+  const cipher::cert cert_rsa_8192b{assets_cert_rsa_8192b_rsa_example_cert_der};
+  const cipher::cert cert_rsa_16k{assets_cert_rsa_16k_rsa_example_cert_der};
+  const cipher::cert cert_rsa_32k{assets_cert_rsa_32k_rsa_example_cert_der};
 
   const std::string expected_subject{
       "C=JP, ST=Tokyo, O=Frank4DD, CN=www.example.com"};

@@ -5,7 +5,7 @@
 #include <openssl/pem.h>
 #include <openssl/x509.h>
 
-#include <libciphervault/cert.hpp>
+#include <cipher/cert.hpp>
 #include <memory>
 #include <string>
 
@@ -13,7 +13,7 @@
 
 #include <tabulate/table.hpp>
 
-namespace ciphervault {
+namespace cipher {
   const auto bio_to_string = [](bio &bio, int size) {
     std::string str;
     str.resize(size);
@@ -29,15 +29,14 @@ namespace ciphervault {
   cert::cert(const std::vector<unsigned char> &cert) {
     this->setup();
 
-    ciphervault::bio cert_bio(BIO_new_mem_buf(cert.data(), cert.size()),
-                              BIO_free);
+    cipher::bio cert_bio(BIO_new_mem_buf(cert.data(), cert.size()), BIO_free);
     if (!(cert_bio.get())) {
       ERR_print_errors_fp(stderr);
       throw std::runtime_error("unable to open cert file");
     }
 
     // create x509 object and read cert into it
-    ciphervault::x509 certificate(X509_new(), X509_free);
+    cipher::x509 certificate(X509_new(), X509_free);
     if (!certificate) {
       ERR_print_errors_fp(stderr);
       throw std::runtime_error("Unable to create X509 object");
@@ -54,7 +53,7 @@ namespace ciphervault {
   }
 
   std::string cert::get_issuer() const {
-    ciphervault::bio output(BIO_new(BIO_s_mem()), BIO_free);
+    cipher::bio output(BIO_new(BIO_s_mem()), BIO_free);
     X509_NAME *issuer = X509_get_issuer_name(this->certificate.get());
 
     if (issuer == nullptr) {
@@ -68,7 +67,7 @@ namespace ciphervault {
   }
 
   std::string cert::get_contents() const {
-    ciphervault::bio output(BIO_new(BIO_s_mem()), BIO_free);
+    cipher::bio output(BIO_new(BIO_s_mem()), BIO_free);
     X509_print_ex(output.get(), this->certificate.get(), 0, 0);
     std::string cert_details = bio_to_string(output, 32768);
     return cert_details;
@@ -82,7 +81,7 @@ namespace ciphervault {
       throw std::runtime_error("Unable to extract subject from certificate");
     }
 
-    ciphervault::bio output(BIO_new(BIO_s_mem()), BIO_free);
+    cipher::bio output(BIO_new(BIO_s_mem()), BIO_free);
     X509_NAME_print_ex(output.get(), subject, 0, 0);
     std::string cert_subject = bio_to_string(output, 4096);
     return cert_subject;
@@ -96,7 +95,7 @@ namespace ciphervault {
       throw std::runtime_error("Unable to extract notBefore from certificate");
     }
 
-    ciphervault::bio output(BIO_new(BIO_s_mem()), BIO_free);
+    cipher::bio output(BIO_new(BIO_s_mem()), BIO_free);
     ASN1_TIME_print(output.get(), not_before);
 
     std::string not_before_str = bio_to_string(output, 4096);
@@ -112,7 +111,7 @@ namespace ciphervault {
       throw std::runtime_error("Unable to extract notAfter from certificate");
     }
 
-    ciphervault::bio output(BIO_new(BIO_s_mem()), BIO_free);
+    cipher::bio output(BIO_new(BIO_s_mem()), BIO_free);
     ASN1_TIME_print(output.get(), not_after);
 
     std::string not_after_str = bio_to_string(output, 4096);
@@ -129,7 +128,7 @@ namespace ciphervault {
       throw std::runtime_error(
           "Unable to extract signature algorithm from certificate");
     }
-    ciphervault::bio output(BIO_new(BIO_s_mem()), BIO_free);
+    cipher::bio output(BIO_new(BIO_s_mem()), BIO_free);
     std::string signature_algorithm_str = bio_to_string(output, 4096);
     return signature_algorithm_str;
   }
@@ -176,4 +175,4 @@ namespace ciphervault {
     EVP_cleanup();
     CRYPTO_cleanup_all_ex_data();
   }
-} // namespace ciphervault
+} // namespace cipher

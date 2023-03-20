@@ -5,7 +5,64 @@
 # project
 cmake_minimum_required(VERSION 3.15.0)
 cmake_policy(SET CMP0091 NEW)
-project(ciphervault LANGUAGES CXX C)
+project(cipher LANGUAGES CXX C)
+
+# target
+set(CMAKE_C_COMPILER "clang")
+set(CMAKE_CXX_COMPILER "clang++")
+add_library(cipher STATIC "")
+set_target_properties(cipher PROPERTIES OUTPUT_NAME "cipher")
+set_target_properties(cipher PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/ciphervault")
+target_include_directories(cipher PRIVATE
+    include
+    /usr/local/include
+    /usr/include
+)
+target_include_directories(cipher PRIVATE
+    /home/pablo/.xmake/packages/c/cxxopts/v3.0.0/533f1970a0884648838ce983784f4181/include
+    /home/pablo/.xmake/packages/t/tabulate/1.4/f332da4973a7470eb1f7ff02b32fe5d6/include
+)
+target_compile_options(cipher PRIVATE
+    $<$<COMPILE_LANGUAGE:C>:-m64>
+    $<$<COMPILE_LANGUAGE:CXX>:-m64>
+    $<$<COMPILE_LANGUAGE:C>:-std=c++2b>
+    $<$<COMPILE_LANGUAGE:CXX>:-std=c++2b>
+    $<$<COMPILE_LANGUAGE:C>:-DNDEBUG>
+    $<$<COMPILE_LANGUAGE:CXX>:-DNDEBUG>
+)
+if(MSVC)
+    target_compile_options(cipher PRIVATE -W3)
+    target_compile_options(cipher PRIVATE -WX)
+else()
+    target_compile_options(cipher PRIVATE -Wall)
+    target_compile_options(cipher PRIVATE -Werror)
+endif()
+if(MSVC)
+    target_compile_options(cipher PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
+else()
+    target_compile_options(cipher PRIVATE -O3)
+endif()
+if(MSVC)
+else()
+    target_compile_options(cipher PRIVATE -fvisibility=hidden)
+endif()
+if(MSVC)
+    set_property(TARGET cipher PROPERTY
+        MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif()
+target_link_libraries(cipher PRIVATE
+    ssl
+    crypto
+)
+target_link_directories(cipher PRIVATE
+    /usr/lib
+)
+target_link_options(cipher PRIVATE
+    -m64
+)
+target_sources(cipher PRIVATE
+    src/cipher/cert.cpp
+)
 
 # target
 set(CMAKE_C_COMPILER "clang")
@@ -13,7 +70,7 @@ set(CMAKE_CXX_COMPILER "clang++")
 add_executable(ciphervault "")
 set_target_properties(ciphervault PROPERTIES OUTPUT_NAME "ciphervault")
 set_target_properties(ciphervault PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/ciphervault")
-add_dependencies(ciphervault libciphervault)
+add_dependencies(ciphervault cipher)
 target_include_directories(ciphervault PRIVATE
     include
     /usr/local/include
@@ -52,10 +109,9 @@ if(MSVC)
         MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 endif()
 target_link_libraries(ciphervault PRIVATE
-    fmt
     ssl
     crypto
-    libciphervault
+    cipher
 )
 target_link_directories(ciphervault PRIVATE
     /usr/lib
@@ -74,7 +130,7 @@ set(CMAKE_CXX_COMPILER "clang++")
 add_executable(ciphervault_bench "")
 set_target_properties(ciphervault_bench PROPERTIES OUTPUT_NAME "ciphervault_bench")
 set_target_properties(ciphervault_bench PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/ciphervault")
-add_dependencies(ciphervault_bench libciphervault)
+add_dependencies(ciphervault_bench cipher)
 target_include_directories(ciphervault_bench PRIVATE
     include
     /usr/local/include
@@ -114,8 +170,7 @@ endif()
 target_link_libraries(ciphervault_bench PRIVATE
     benchmark_main
     benchmark
-    libciphervault
-    fmt
+    cipher
     ssl
     crypto
     pthread
@@ -140,7 +195,7 @@ set(CMAKE_CXX_COMPILER "clang++")
 add_executable(ciphervault_test "")
 set_target_properties(ciphervault_test PROPERTIES OUTPUT_NAME "ciphervault_test")
 set_target_properties(ciphervault_test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/ciphervault")
-add_dependencies(ciphervault_test libciphervault)
+add_dependencies(ciphervault_test cipher)
 target_include_directories(ciphervault_test PRIVATE
     include
     /usr/local/include
@@ -181,8 +236,7 @@ target_link_libraries(ciphervault_test PRIVATE
     gtest
     gtest_main
     gmock
-    libciphervault
-    fmt
+    cipher
     ssl
     crypto
     pthread
@@ -199,63 +253,5 @@ target_sources(ciphervault_test PRIVATE
     test/cert/cert_rsa_tests.cpp
     test/cert/cert_dsa_tests.cpp
     test/main.cpp
-)
-
-# target
-set(CMAKE_C_COMPILER "clang")
-set(CMAKE_CXX_COMPILER "clang++")
-add_library(libciphervault STATIC "")
-set_target_properties(libciphervault PROPERTIES OUTPUT_NAME "libciphervault")
-set_target_properties(libciphervault PROPERTIES ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/ciphervault")
-target_include_directories(libciphervault PRIVATE
-    include
-    /usr/local/include
-    /usr/include
-)
-target_include_directories(libciphervault PRIVATE
-    /home/pablo/.xmake/packages/c/cxxopts/v3.0.0/533f1970a0884648838ce983784f4181/include
-    /home/pablo/.xmake/packages/t/tabulate/1.4/f332da4973a7470eb1f7ff02b32fe5d6/include
-)
-target_compile_options(libciphervault PRIVATE
-    $<$<COMPILE_LANGUAGE:C>:-m64>
-    $<$<COMPILE_LANGUAGE:CXX>:-m64>
-    $<$<COMPILE_LANGUAGE:C>:-std=c++2b>
-    $<$<COMPILE_LANGUAGE:CXX>:-std=c++2b>
-    $<$<COMPILE_LANGUAGE:C>:-DNDEBUG>
-    $<$<COMPILE_LANGUAGE:CXX>:-DNDEBUG>
-)
-if(MSVC)
-    target_compile_options(libciphervault PRIVATE -W3)
-    target_compile_options(libciphervault PRIVATE -WX)
-else()
-    target_compile_options(libciphervault PRIVATE -Wall)
-    target_compile_options(libciphervault PRIVATE -Werror)
-endif()
-if(MSVC)
-    target_compile_options(libciphervault PRIVATE $<$<CONFIG:Release>:-Ox -fp:fast>)
-else()
-    target_compile_options(libciphervault PRIVATE -O3)
-endif()
-if(MSVC)
-else()
-    target_compile_options(libciphervault PRIVATE -fvisibility=hidden)
-endif()
-if(MSVC)
-    set_property(TARGET libciphervault PROPERTY
-        MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
-endif()
-target_link_libraries(libciphervault PRIVATE
-    fmt
-    ssl
-    crypto
-)
-target_link_directories(libciphervault PRIVATE
-    /usr/lib
-)
-target_link_options(libciphervault PRIVATE
-    -m64
-)
-target_sources(libciphervault PRIVATE
-    src/libciphervault/cert.cpp
 )
 

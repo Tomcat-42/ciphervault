@@ -1,4 +1,3 @@
-#include <fmt/format.h>
 #include <openssl/asn1.h>
 #include <openssl/bio.h>
 #include <openssl/conf.h>
@@ -6,10 +5,10 @@
 #include <openssl/pem.h>
 #include <openssl/x509.h>
 
+#include <cipher/cert.hpp>
 #include <cstddef>
 #include <fstream>
 #include <iostream>
-#include <libciphervault/cert.hpp>
 #include <memory>
 #include <sstream>
 #include <stdexcept>
@@ -21,7 +20,7 @@
 
 int main(int argc, const char **argv) {
   cxxopts::Options options("ciphervault",
-                           "CipherVault --  A x509 DER digital certificates "
+                           "ciphervault --  A x509 DER digital certificates "
                            "wrapper library and comman line application.");
 
   // clang-format off
@@ -56,9 +55,9 @@ int main(int argc, const char **argv) {
                                     std::istreambuf_iterator<char>());
 
   // try to load the certificate
-  ciphervault::cert cert;
+  cipher::cert cert;
   try {
-    cert = ciphervault::cert{buffer};
+    cert = cipher::cert{buffer};
   } catch (const std::runtime_error &e) {
     std::cerr << "Could not parse certificate: " << e.what() << std::endl;
     exit(1);

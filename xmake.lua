@@ -13,17 +13,16 @@ add_cxflags("-std=c++2b", { force = true })
 add_includedirs("include", "/usr/local/include", "/usr/include")
 
 -- add libraries
-local project_libs = { "fmt", "cxxopts", "openssl3", "tabulate" }
+local project_libs = { "cxxopts", "openssl3", "tabulate" }
 local test_libs = { "gtest" }
 local bench_libs = { "benchmark" }
 
 add_requires(table.unpack(project_libs))
-add_requires(table.unpack(test_libs))
 add_requires(table.unpack(bench_libs))
+add_requires(table.unpack(test_libs))
 
 -- main project library
-target("libciphervault")
-set_prefixname("")
+target("cipher")
 set_kind("static")
 add_files("src/**/*.cpp")
 add_packages(table.unpack(project_libs))
@@ -35,7 +34,7 @@ target("ciphervault")
 set_kind("binary")
 add_files("src/main.cpp")
 add_packages(table.unpack(project_libs))
-add_deps("libciphervault")
+add_deps("cipher")
 set_installdir("/usr/local")
 set_targetdir("./ciphervault")
 
@@ -44,7 +43,7 @@ target("ciphervault_test")
 set_kind("binary")
 add_files("test/**/*.cpp", "test/main.cpp")
 add_packages(table.unpack(test_libs))
-add_deps("libciphervault")
+add_deps("cipher")
 set_installdir("/usr/local")
 set_targetdir("./ciphervault")
 
@@ -53,7 +52,7 @@ target("ciphervault_bench")
 set_kind("binary")
 add_files("bench/**/*.cpp", "bench/main.cpp")
 add_packages(table.unpack(bench_libs))
-add_deps("libciphervault")
+add_deps("cipher")
 set_installdir("/usr/local")
 set_targetdir("./ciphervault")
 

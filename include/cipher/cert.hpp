@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 
-namespace ciphervault {
+namespace cipher {
   std::string test();
 
   // Smart pointers wrappers => RAII
@@ -26,7 +26,7 @@ namespace ciphervault {
     /**
      * @brief The in-memory representation of the certificate
      * */
-    ciphervault::x509 certificate = {nullptr, nullptr};
+    cipher::x509 certificate = {nullptr, nullptr};
 
     /**
      * @brief Initialize the OpenSSL library
@@ -95,4 +95,4 @@ namespace ciphervault {
     // overload the >> operator
     friend std::istream &operator>>(std::istream &is, cert &c);
   };
-} // namespace ciphervault
+} // namespace cipher

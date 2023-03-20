@@ -5,11 +5,9 @@ WORKDIR /home/cppdev/ciphervault
 
 COPY --chmod=0755 --chown=cppdev:cppdev . ./
 
-# project deps
-RUN xrepo install -y fmt cxxopts gtest benchmark
-
-# build
-RUN xmake build
+# build deps
+RUN xrepo install -y fmt cxxopts gtest benchmark tabulate
+RUN xmake build -y
 
 # test
 # RUN xmake run test
@@ -22,10 +20,10 @@ RUN xmake build
 
 # FROM cppdev:latest
 
-FROM cppdev:latest AS runner
-
-COPY --chown=cppdev:cppdev --from=builder \
-    /home/cppdev/ciphervault/build/linux/x86_64/release/ciphervault \
-    ./app/
-
-ENTRYPOINT [ "./app/ciphervault" ]
+# FROM cppdev:latest AS runner
+#
+# COPY --chown=cppdev:cppdev --from=builder \
+#     /home/cppdev/ciphervault/build/linux/x86_64/release/ciphervault \
+#     ./app/
+#
+# ENTRYPOINT [ "./app/ciphervault" ]
