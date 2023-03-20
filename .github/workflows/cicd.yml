@@ -20,12 +20,17 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: build
+      - name: Build
         run: ${PWD}/scripts/build
-      - name: test
+      - name: Test
         run: ${PWD}/scripts/test
-      - name: publish
+      - name: Publish
         run: ${PWD}/scripts/publish
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: "${PWD}/ciphervault"
     # - name: Build Docker image
     #   run: docker build -t tomcat0x42/ciphervault .
     # - name: Create Docker container
