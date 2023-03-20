@@ -39,8 +39,6 @@ jobs:
         with:
           files: "ciphervault.zip"
           fail_on_unmatched_files: true
-          name: latest
-          tag_name: latest
     # - name: Build Docker image
     #   run: docker build -t tomcat0x42/ciphervault .
     # - name: Create Docker container
