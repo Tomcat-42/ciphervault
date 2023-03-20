@@ -19,7 +19,7 @@ jobs:
       - name: Check out this repository
         uses: actions/checkout@v3
       - name: build
-        run: ${PWD}/scripts/
+        run: ${PWD}/scripts/build
       - name: test
         run: ls
     # - name: Build Docker image
