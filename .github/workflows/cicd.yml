@@ -29,11 +29,15 @@ jobs:
         run: ${PWD}/scripts/test
       - name: Publish
         run: ${PWD}/scripts/publish
+      - name: Pack
+      - uses: montudor/action-zip@v1
+        with:
+        args: zip -qq -r ciphervault.zip ciphervault
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: "makefile"
+          files: "ciphervault.zip"
     # - name: Build Docker image
     #   run: docker build -t tomcat0x42/ciphervault .
     # - name: Create Docker container
