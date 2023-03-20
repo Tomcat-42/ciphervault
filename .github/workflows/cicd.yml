@@ -18,10 +18,10 @@ jobs:
     steps:
       - name: Check out this repository
         uses: actions/checkout@v3
-      # - name: build
-      #   run: ${PWD}/scripts/build
+      - name: build
+        run: ${PWD}/scripts/build
       - name: test
-        run: ls "${PWD}/scripts"
+        run: ls
     # - name: Build Docker image
     #   run: docker build -t tomcat0x42/ciphervault .
     # - name: Create Docker container
