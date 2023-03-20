@@ -1,4 +1,4 @@
-FROM cppdev:latest AS builder
+FROM tomcat0x42/cppdev:latest AS builder
 
 USER cppdev
 WORKDIR /home/cppdev/ciphervault
