@@ -20,4 +20,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: tomcat0x42/cppdev:latest
+          tags: tomcat0x42/ciphervault:latest
