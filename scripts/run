@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+PARAMS=$*
+
+# if no parameters are given, the default parameters are used
+if [ $# -eq 0 ]; then
+  PARAMS=("assets/cert/dsa/1024b-dsa-example-cert.der" "--table")
+fi
+
+
+docker run -v $PWD/assets:/ciphervault/assets -it tomcat0x42/ciphervault ${PARAMS[@]}
